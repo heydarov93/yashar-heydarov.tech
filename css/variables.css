@@ -1,0 +1,39 @@
+:root {
+  /* Primary Palette */
+  --main-color: #3498db;
+  --secondary-color: #2ecc71;
+
+  /* Font Palette */
+  --main-font-color: #333333;
+  --secondary-font-color: #555;
+  --tertiary-font-color: #777;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --black: #000000;
+  --light-gray: #f4f4f4;
+  --dark-gray: #333333;
+
+  /* Alerts */
+  --success-color: #27ae60;
+  --warning-color: #f1c40f;
+  --error-color: #e74c3c;
+
+  /* Typography */
+  --font-main: 'Roboto', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-base: 1.6rem;
+  --spacing-md: 2.4rem;
+  --spacing-lg: 3.2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 4.8rem;
+  --spacing-3xl: 5.6rem;
+  --spacing-4xl: 6.4rem;
+  --spacing-5xl: 7.2rem;
+  --spacing-6xl: 8rem;
+  --spacing-7xl: 8.8rem;
+  --spacing-8xl: 9.6rem;
+}
