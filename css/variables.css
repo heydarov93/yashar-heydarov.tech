@@ -1,7 +1,9 @@
 :root {
   /* Primary Palette */
-  --main-color: #3498db;
-  --secondary-color: #2ecc71;
+  --primary-color: #176b87;
+  --secondary-color: #86b6f6;
+  --tertiary-color: #b4d4ff;
+  --quaternary-color: #e7f0ff;
 
   /* Font Palette */
   --main-font-color: #333333;
