@@ -12,6 +12,6 @@ html {
 
 body {
   font-family: var(--font-main);
-  color: var(--main-font-color);
+  color: var(--primary-font-color);
   font-size: var(--spacing-base);
 }
