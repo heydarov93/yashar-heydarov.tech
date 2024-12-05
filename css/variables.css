@@ -10,11 +10,24 @@
   --secondary-font-color: #555;
   --tertiary-font-color: #777;
 
+  /* Font Weight */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-bolder: 900;
+
   /* Neutrals */
   --white: #ffffff;
   --black: #000000;
-  --light-gray: #f4f4f4;
+  --light-gray: #dadce0;
   --dark-gray: #333333;
+
+  /* box shadow */
+  --box-shadow-1: 0 0 0.3rem #0003;
+
+  /* Border */
+  --border-bottom-separator: 0.1rem solid var(--light-gray);
 
   /* Alerts */
   --success-color: #27ae60;
@@ -38,4 +51,7 @@
   --spacing-6xl: 8rem;
   --spacing-7xl: 8.8rem;
   --spacing-8xl: 9.6rem;
+
+  /* Transition */
+  --transition: all 0.3s ease-in-out;
 }
