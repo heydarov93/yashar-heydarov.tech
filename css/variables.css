@@ -1,9 +1,10 @@
 :root {
   /* Primary Palette */
-  --primary-color: #176b87;
-  --secondary-color: #86b6f6;
-  --tertiary-color: #b4d4ff;
-  --quaternary-color: #e7f0ff;
+  --primary-color: #39a2db;
+  --secondary-color: #053742;
+  --tertiary-color: #a2dbfa;
+  --quaternary-color: #e8f0f2;
+  --background-color: #eeeeee;
 
   /* Font Palette */
   --primary-font-color: #333333;
