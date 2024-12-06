@@ -39,6 +39,16 @@
       height: max-content;
     }
 
+    :where(.login, .register) {
+      color: var(--tertiary-font-color);
+    }
+
+    .login:hover,
+    .register:hover,
+    .nav-list a:hover {
+      color: var(--primary-color);
+    }
+
     .btn-cta {
       padding: var(--spacing-sm) var(--spacing-base);
       border-radius: var(--spacing-xs);
@@ -51,16 +61,75 @@
     a.btn-cta:hover {
       color: var(--primary-color);
       background-color: var(--quaternary-color);
+      box-shadow: inset 0 0 0 0.1rem var(--primary-color);
     }
+  }
+}
 
-    :where(.login, .register) {
-      color: var(--tertiary-font-color);
-    }
+/* ******************************************************* */
+.hero {
+  .container {
+    height: 50rem;
+    display: flex;
+    align-items: center;
 
-    .login:hover,
-    .register:hover,
-    .nav-list a:hover {
-      color: var(--primary-color);
+    .hero-content {
+      .content-wrapper {
+        max-width: 50rem;
+        width: 100%;
+
+        .hero-title {
+          font-size: var(--spacing-xxl);
+          margin-bottom: var(--spacing-md);
+
+          .hand {
+            display: inline-block;
+            animation-name: wave;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+          }
+        }
+
+        .hero-subtitle {
+          font-size: var(--spacing-md);
+          line-height: 1.5;
+          color: var(--tertiary-font-color);
+          font-style: italic;
+          margin-bottom: var(--spacing-md);
+        }
+
+        .hero-cta {
+          display: flex;
+          gap: var(--spacing-base);
+
+          .btn-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-grow: 1;
+          }
+
+          .cta-primary {
+            color: var(--quaternary-color);
+            background-color: var(--primary-color);
+          }
+
+          .cta-primary:hover {
+            color: var(--primary-color);
+            background-color: var(--quaternary-color);
+          }
+
+          .cta-secondary {
+            color: var(--primary-color);
+            background-color: var(--quaternary-color);
+          }
+
+          .cta-secondary:hover {
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
 }
