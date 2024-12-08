@@ -28,6 +28,11 @@ a:active {
   color: inherit;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   max-width: 100rem;
   width: 100%;
@@ -40,4 +45,10 @@ a:active {
   box-shadow: inset 0 0 0 0.1rem var(--primary-color);
 
   transition: var(--transition);
+}
+
+.section-title {
+  font-size: var(--spacing-xxl);
+  margin-bottom: var(--spacing-md);
+  color: var(--secondary-color);
 }
