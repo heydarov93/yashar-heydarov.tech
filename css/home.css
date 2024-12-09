@@ -1,5 +1,4 @@
 .header {
-  background-color: var(--quaternary-color);
   .container {
     display: flex;
     justify-content: space-between;
@@ -69,7 +68,6 @@
 
 /* ******************************************************* */
 .hero {
-  background-color: var(--quaternary-color);
   border-bottom: var(--border-bottom-separator-2);
   .container {
     height: 80vh;
@@ -156,6 +154,7 @@
     .about-content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       .about-left {
         max-width: 40rem;
@@ -186,7 +185,6 @@
 }
 
 .tech-stack {
-  background-color: var(--quaternary-color);
   .container {
     padding: var(--spacing-6xl) 0;
 
@@ -241,7 +239,7 @@
       .main-logos {
         margin-bottom: var(--spacing-xxl);
         padding-bottom: var(--spacing-xxl);
-        border-bottom: var(--border-bottom-separator-2);
+        border-bottom: var(--border-bottom-separator);
       }
     }
   }
