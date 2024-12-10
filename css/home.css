@@ -1,17 +1,14 @@
 .header {
+  padding: var(--spacing-lg-md) 0;
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: var(--border-bottom-separator);
-
-    padding: var(--spacing-md) 0;
-    padding-bottom: 0;
   }
 
   .logo-wrapper {
-    width: var(--spacing-5xl);
-    height: var(--spacing-3xl);
+    width: var(--spacing-4xl);
+    height: var(--spacing-4xl);
     overflow: hidden;
   }
 
@@ -24,44 +21,20 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: var(--spacing-6xl);
 
-    flex-grow: 1;
-    padding: var(--spacing-base);
-    height: max-content;
-
-    .nav-list,
-    .auth-wrapper {
+    .nav-list {
       display: flex;
-      justify-content: space-around;
-      gap: var(--spacing-base);
+      align-items: center;
 
-      height: max-content;
-    }
+      .nav-item {
+        color: #333;
+      }
 
-    :where(.login, .register) {
-      color: var(--tertiary-font-color);
-    }
-
-    .login:hover,
-    .register:hover,
-    .nav-list a:hover {
-      color: var(--primary-color);
-    }
-
-    .btn-cta {
-      padding: var(--spacing-sm) var(--spacing-base);
-      border-radius: var(--spacing-xs);
-      color: var(--quaternary-color);
-      background-color: var(--primary-color);
-
-      transition: var(--transition);
-    }
-
-    a.btn-cta:hover {
-      color: var(--primary-color);
-      background-color: var(--quaternary-color);
-      box-shadow: inset 0 0 0 0.1rem var(--primary-color);
+      .login,
+      .register {
+        color: var(--tertiary-font-color);
+        font-weight: var(--font-weight-regular);
+      }
     }
   }
 }
