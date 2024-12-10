@@ -1,29 +1,62 @@
 :root {
   /* Primary Palette */
-  --primary-color: #39a2db;
-  --secondary-color: #053742;
+  --primary-color-600: #2387be;
+  --primary-color-500: #39a2db;
+  --secondary-color-900: #053742;
   --tertiary-color: #a2dbfa;
   --quaternary-color: #e8f0f2;
   --background-color: #eeeeee;
 
+  /* Neutrals */
+  --black: #000000;
+  --white: #ffffff;
+  --light-gray: #dadce0;
+  --Gray-50: #f0f1f3;
+  --Gray-100: #e6e8eb;
+  --Gray-200: #c3c7ce;
+  --Gray-300: #a5acb5;
+  --Gray-300-2: #b8bcc2;
+  --Gray-400: #87909d;
+  --Gray-500: #697484;
+  --Gray-600: #556070;
+  --Gray-700: #424e60;
+  --Gray-800: #2b384c;
+  --Gray-900: #132238;
+
+  /* Typography */
+  --font-main: 'Work Sans', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
   /* Font Palette */
-  --primary-font-color: #333333;
-  --secondary-font-color: #555;
-  --tertiary-font-color: #777;
+  --primary-font-color: var(--Gray-900);
+  --secondary-font-color: var(--Gray-600);
+  --tertiary-font-color: var(--Gray-400);
 
   /* Font Weight */
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-weight-bolder: 900;
 
-  /* Neutrals */
-  --white: #ffffff;
-  --black: #000000;
-  --light-gray: #dadce0;
-  --dark-gray: #333333;
-  --cherry: #c62e2e;
+  /* Spacing */
+  --spacing-2xs: 0.4rem;
+  --spacing-xs: 0.8rem;
+  --spacing-sm: 1.4rem;
+  --spacing-md-sm: 1.6rem;
+  --spacing-md: 1.8rem;
+  --spacing-lg-md: 2rem;
+  --spacing-lg: 2.4rem;
+  --spacing-xl: 3.2rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 4.8rem;
+  --spacing-4xl: 5.6rem;
+  --spacing-5xl: 6.4rem;
+  --spacing-6xl: 7.2rem;
+  --spacing-7xl: 8rem;
+  --spacing-8xl: 8.8rem;
+  --spacing-9xl: 9.6rem;
 
   /* box shadow */
   --box-shadow-1: 0 0 0.3rem #0003;
@@ -32,30 +65,9 @@
   --border-bottom-separator: 0.1rem solid var(--light-gray);
   --border-bottom-separator-2: 0.1rem solid var(--tertiary-color);
 
-  /* Alerts */
-  --success-color: #27ae60;
-  --warning-color: #f1c40f;
-  --error-color: #e74c3c;
-
-  /* Typography */
-  --font-main: 'Roboto', sans-serif;
-
-  /* Spacing */
-  --spacing-xs: 0.4rem;
-  --spacing-sm: 0.8rem;
-  --spacing-base: 1.6rem;
-  --spacing-umd: 1.8rem;
-  --spacing-md: 2.4rem;
-  --spacing-lg: 3.2rem;
-  --spacing-xl: 4rem;
-  --spacing-xxl: 4.8rem;
-  --spacing-3xl: 5.6rem;
-  --spacing-4xl: 6.4rem;
-  --spacing-5xl: 7.2rem;
-  --spacing-6xl: 8rem;
-  --spacing-7xl: 8.8rem;
-  --spacing-8xl: 9.6rem;
-
   /* Transition */
-  --transition: all 0.3s ease-in-out;
+  --transition-all: all 0.3s ease-in-out;
+
+  /* Reusable properties */
+  --p-btn: 1.2rem 2.4rem;
 }
