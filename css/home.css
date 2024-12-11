@@ -43,7 +43,7 @@
 .hero {
   border-bottom: var(--border-bottom-separator-2);
   .container {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
 
@@ -51,31 +51,36 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--spacing-base);
+      /* gap: var(--spacing-base); */
 
       .hero-left {
         .hero-title {
-          font-size: var(--spacing-xxl);
+          font-size: var(--spacing-6xl, 7.2rem);
+          font-weight: var(--font-weight-semi-bold, 600);
+          line-height: var(--spacing-8xl, 8.4rem);
           margin-bottom: var(--spacing-md);
-          color: var(--secondary-color);
-
-          .hand {
-            display: inline-block;
-            animation-name: wave;
-            animation-duration: 0.3s;
-            animation-iteration-count: infinite;
-          }
+          color: var(--primary-font-color, #132238);
         }
 
         .hero-subtitle {
-          font-size: var(--spacing-md);
-          line-height: 1.5;
-          color: var(--tertiary-font-color);
-          font-style: italic;
-          margin-bottom: var(--spacing-md);
+          font-size: var(--spacing-md, 1.8rem);
+          line-height: var(--spacing-lg, 2.4rem);
 
           .strong {
-            font-weight: var(--font-weight-bold);
+            color: var(--primary-font-color, #142339);
+            font-weight: var(--font-weight-regular, 400);
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0.2rem;
+              left: 0;
+              width: 100%;
+              height: var(--spacing-2xs, 0.4rem);
+              background-color: var(--primary-color-300, #8fcaea);
+              opacity: 0.6;
+            }
           }
         }
 
@@ -84,30 +89,7 @@
           gap: var(--spacing-base);
 
           .btn-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            flex-grow: 1;
-          }
-
-          .cta-primary {
-            color: var(--quaternary-color);
-            background-color: var(--primary-color);
-          }
-
-          .cta-primary:hover {
-            color: var(--primary-color);
-            background-color: var(--quaternary-color);
-          }
-
-          .cta-secondary {
-            color: var(--primary-color);
-            background-color: var(--quaternary-color);
-          }
-
-          .cta-secondary:hover {
-            background-color: transparent;
+            font-weight: var(--font-weight-semi-bold, 600);
           }
         }
       }
