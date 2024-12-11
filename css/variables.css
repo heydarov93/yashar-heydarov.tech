@@ -1,11 +1,18 @@
 :root {
   /* Primary Palette */
-  --primary-color-600: #2387be;
-  --primary-color-500: #39a2db;
+  --primary-color-50: hsl(201, 69%, 94%);
+  --primary-color-100: hsl(201, 69%, 89%);
+  --primary-color-200: hsl(201, 69%, 84%);
+  --primary-color-300: hsl(201, 69%, 74%);
+  --primary-color-400: hsl(201, 69%, 64%);
+  --primary-color-500: hsl(201, 69%, 54%);
+  --primary-color-600: hsl(201, 69%, 44%);
+  --primary-color-700: hsl(201, 69%, 34%);
+  --primary-color-800: hsl(201, 69%, 24%);
+  --primary-color-900: hsl(201, 69%, 14%);
+
   --secondary-color-900: #053742;
-  --tertiary-color: #a2dbfa;
-  --quaternary-color: #e8f0f2;
-  --background-color: #eeeeee;
+  --tertiary-color: #a3dcfa;
 
   /* Neutrals */
   --black: #000000;
@@ -55,8 +62,9 @@
   --spacing-5xl: 6.4rem;
   --spacing-6xl: 7.2rem;
   --spacing-7xl: 8rem;
-  --spacing-8xl: 8.8rem;
-  --spacing-9xl: 9.6rem;
+  --spacing-8xl: 8.4rem;
+  --spacing-9xl: 8.8rem;
+  --spacing-10xl: 9.6rem;
 
   /* box shadow */
   --box-shadow-1: 0 0 0.3rem #0003;
