@@ -26,7 +26,6 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: inherit;
 }
 
 img {
@@ -74,4 +73,14 @@ img {
   font-size: var(--spacing-xxl);
   margin-bottom: var(--spacing-md);
   color: var(--secondary-color);
+}
+
+.icon {
+  font-size: var(--spacing-lg-md, 2rem);
+  width: var(--spacing-lg-md, 2rem);
+  height: var(--spacing-lg-md, 2rem);
+  line-height: var(--spacing-lg-md, 2rem);
+  text-align: center;
+  display: inline-block;
+  color: var(--Gray-700, #424e60);
 }
