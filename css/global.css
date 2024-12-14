@@ -26,6 +26,7 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
+  transition: var(--transition-all);
 }
 
 img {
@@ -83,4 +84,5 @@ img {
   text-align: center;
   display: inline-block;
   color: var(--Gray-700, #424e60);
+  transition: var(--transition-all);
 }
