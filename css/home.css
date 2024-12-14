@@ -41,7 +41,6 @@
 
 /* ******************************************************* */
 .hero {
-  border-bottom: var(--border-bottom-separator-2);
   .container {
     height: 100vh;
     max-height: 98.4rem;
@@ -129,12 +128,7 @@
 
               &:hover {
                 background: var(--primary-color-200, #badff2);
-                transform: scale(0.95);
-              }
-
-              &:hover .social-title,
-              &:hover .icon {
-                transform: scale(1.1);
+                transform: translateY(0.5rem);
               }
 
               .icon {
@@ -159,7 +153,7 @@
         box-shadow: 0rem 2.4rem 11.6rem 0rem rgba(43, 56, 76, 0.09);
 
         .img-wrapper {
-          width: 90%;
+          width: 100%;
         }
       }
     }
@@ -168,36 +162,116 @@
 
 /* ******************************************************* */
 .about {
-  border-bottom: var(--border-bottom-separator-2);
+  height: 62rem;
+  border-bottom: 1px solid var(--Gray-300, #a5acb5);
+
   .container {
-    padding: var(--spacing-6xl) 0;
+    max-width: 132rem;
+    padding: 11.2rem;
+    background-color: var(--white, #fff);
+    border-radius: var(--spacing-md-sm, 1.6rem);
+    box-shadow: 0rem 3.6rem 10.5rem 0rem rgba(43, 56, 76, 0.1);
+
     .about-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       .about-left {
-        max-width: 40rem;
-        height: 28rem;
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        overflow: hidden;
-      }
+        flex: 0 1 42.4rem;
+        max-height: 50.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-      .about-right {
-        max-width: 50%;
-        .about-title {
-        }
+        .img-wrapper {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 46.8rem;
+          background: var(--Gray-50, #f0f1f3);
+          border-radius: 1rem;
+          border: 0.1rem solid var(--Gray-50, #f0f1f3);
 
-        .about-text {
-          text-align: justify;
-          line-height: 1.5;
-
-          .strong {
-            font-weight: var(--font-weight-bold);
+          img {
+            width: 90%;
           }
         }
 
-        .view-more {
+        .socials-bar {
+          display: flex;
+          padding: var(--spacing-xs, 0.8rem);
+          width: max-content;
+          transform: translateY(-50%);
+          border-radius: var(--spacing-2xs, 0.4rem);
+          background: var(----white, #fff);
+          box-shadow: 0rem 1.2rem 6.4rem 0rem rgba(28, 25, 25, 0.12);
+
+          .social-link {
+            padding: var(--spacing-md-sm, 1.6rem);
+            border-radius: var(--spacing-2xs, 0.4rem);
+
+            .icon {
+              font-size: var(--spacing-md, 1.8rem);
+              width: var(--spacing-md, 1.8rem);
+              height: var(--spacing-md, 1.8rem);
+              line-height: var(--spacing-md, 1.8rem);
+              color: var(--primary-color-500, #39a2db);
+            }
+
+            &:hover {
+              background: var(--primary-color-500, #39a2db);
+              color: var(--white, #fff);
+            }
+
+            &:hover .icon {
+              color: var(--white, #fff);
+            }
+          }
+        }
+      }
+
+      .about-right {
+        flex: 0 1 53.6rem;
+
+        .about-text {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-md-sm, 1.6rem);
+
+          .about-title {
+            color: var(--primary-font-color, #132238);
+            font-size: 3.8rem;
+            font-weight: var(--font-weight-semi-bold, 600);
+            line-height: 5rem;
+          }
+
+          .subtitle-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md-sm, 1.6rem);
+            color: var(--Gray-600, #556070);
+            line-height: var(--spacing-lg, 2.4rem);
+
+            .about-subtitle {
+            }
+          }
+
+          .about-cta {
+            display: flex;
+            gap: var(--spacing-md-sm, 1.6rem);
+
+            .btn-download {
+              background: transparent;
+              color: var(--primary-color-500, #39a2db);
+              border: 0.1rem solid var(--primary-color-500, #39a2db);
+
+              &:hover {
+                color: var(--primary-color-600, #2387be);
+                border-color: var(--primary-color-600, #2387be);
+              }
+            }
+          }
         }
       }
     }
