@@ -11,11 +11,11 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
-  color: var(--secondary-font-color);
-  font-size: var(--spacing-md);
-  line-height: var(--spacing-lg-md);
-  background-color: var(--white);
+  font-family: var(--font-main, 'Work Sans', sans-serif);
+  color: var(--secondary-font-color, #556070);
+  font-size: var(--spacing-md, 1.8rem);
+  line-height: var(--spacing-lg-md, 2rem);
+  background-color: var(--white, #fff);
 }
 
 ul {
@@ -71,9 +71,11 @@ img {
 }
 
 .section-title {
-  font-size: var(--spacing-xxl);
-  margin-bottom: var(--spacing-md);
-  color: var(--secondary-color);
+  color: var(--Gray-900, #132238);
+  font-size: var(--spacing-3xl, 4.8rem);
+  font-style: normal;
+  font-weight: var(--font-weight-semi-bold, 600);
+  line-height: var(--spacing-4xl, 5.6rem);
 }
 
 .icon {
