@@ -163,7 +163,7 @@
 /* ******************************************************* */
 .about {
   height: 62rem;
-  border-bottom: 1px solid var(--Gray-300, #a5acb5);
+  position: relative;
 
   .container {
     max-width: 132rem;
@@ -269,6 +269,164 @@
               &:hover {
                 color: var(--primary-color-600, #2387be);
                 border-color: var(--primary-color-600, #2387be);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ******************************************************* */
+.experience {
+  --container-padding: 24.8rem 0 15rem;
+  --exp-left-flex: 0 0 52.9rem;
+  --exp-right-flex: 0 1 64.8rem;
+  --exp-content-display: flex;
+  --exp-content-justify: space-between;
+  --exp-left-font-size: var(--spacing-md, 1.8rem);
+  --exp-left-line-height: var(--spacing-lg, 2.4rem);
+  --exp-detail-padding: 0 0 0 var(--spacing-md-sm, 1.6rem);
+  --detail-section-text-padding: 0 0 0 var(--spacing-md-sm, 1.6rem);
+  --card-padding: var(--spacing-xl, 3.2rem);
+  --card-top-display: flex;
+  --card-top-align-items: center;
+  --card-top-gap: var(--spacing-md, 1.8rem);
+  --card-title-font-size: var(--spacing-lg, 2.4rem);
+  --card-title-line-height: 100%;
+  --card-title-weight: var(--font-weight-semi-bold, 600);
+  --card-job-desc-font-size: var(--spacing-md-sm, 1.6rem);
+  --card-job-desc-line-height: var(--spacing-lg, 2.4rem);
+  --logo-height: var(--spacing-5xl, 6.4rem);
+  --logo-width: var(--spacing-5xl, 6.4rem);
+
+  background-color: var(--Gray-50, #f0f1f3);
+
+  .container {
+    padding: var(--container-padding);
+
+    .experience-content {
+      display: var(--exp-content-display, flex);
+      justify-content: var(--exp-content-justify, space-between);
+      max-height: 57.6rem;
+      width: 100%;
+      overflow: hidden;
+
+      .experience-left {
+        flex: var(--exp-left-flex);
+        font-size: var(--exp-left-font-size);
+        line-height: var(--exp-left-line-height);
+
+        .experience-title {
+          margin-bottom: var(--spacing-lg, 2.4rem);
+        }
+
+        .experience-detail {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-md-sm, 1.6rem);
+          padding: var(--exp-detail-padding);
+
+          section {
+            p,
+            ul {
+              padding: var(--detail-section-text-padding);
+            }
+
+            ul {
+              display: flex;
+              flex-direction: column;
+              gap: var(--spacing-xs, 0.8rem);
+            }
+
+            .responsibility-list,
+            .achievement-list,
+            .skill-list {
+              /* list-style: circle; */
+            }
+
+            h4,
+            h5,
+            h6 {
+              font-size: var(--exp-left-font-size);
+            }
+
+            strong {
+              font-weight: var(--font-weight-semi-bold, 600);
+            }
+          }
+        }
+      }
+
+      .experience-right {
+        flex: var(--exp-right-flex);
+
+        .experience-cards {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-lg, 2.4rem);
+
+          .active-card {
+            box-shadow: 0rem 3.2rem 9.6rem 0rem rgba(28, 25, 25, 0.16);
+            position: relative;
+
+            .rectangle {
+              width: 0.5rem;
+              height: 100%;
+              background-color: var(--primary-color-500);
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+
+          .experience-card {
+            flex: 0 0 auto;
+            border-radius: var(--spacing-xs, 0.8rem);
+            padding: var(--card-padding);
+            background-color: var(--white, #fff);
+
+            overflow: hidden;
+
+            .job-info,
+            .card-bottom {
+              color: var(--Gray-700, #424e60);
+              font-family: var(--font-secondary, 'Poppins', sans-serif);
+              font-size: var(--card-job-desc-font-size);
+              line-height: var(--card-job-desc-line-height);
+            }
+
+            .card-top {
+              margin-bottom: 2rem;
+              display: var(--card-top-display);
+              align-items: var(--card-top-align-items);
+              gap: var(--card-top-gap);
+              overflow: hidden;
+
+              .company-logo {
+                height: var(--logo-height);
+                width: var(--logo-width);
+                border-radius: 9999px;
+                overflow: hidden;
+                box-shadow: 0rem 0.2rem 0.8rem rgba(28, 25, 25, 0.16);
+              }
+
+              .job-info {
+                .job-title {
+                  color: var(--Gray-900, #132238);
+                  font-size: var(--card-title-font-size);
+                  font-weight: var(--card-title-weight);
+                  line-height: var(--card-title-line-height);
+                }
+              }
+            }
+
+            .card-bottom {
+              .responsibilities-title {
+                color: var(--Gray-900, #132238);
+                font-size: var(--card-job-desc-font-size);
+                font-weight: var(--font-weight-semi-bold, 600);
               }
             }
           }
