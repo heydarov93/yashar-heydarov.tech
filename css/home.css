@@ -631,48 +631,66 @@
 }
 
 .tech-stack {
-  .container {
-    padding: var(--spacing-6xl) 0;
+  --container-padding: 10rem 0;
+  --tech-title-margin: 0 0 var(--spacing-xl, 3.2rem);
+  --main-logos-margin: 0 0 var(--spacing-xxl, 4.8rem);
+  --logos-title-margin: 0 0 var(--spacing-lg, 2.4rem);
+  --logos-subtitle-margin: 0 0 var(--spacing-sm, 1.4rem);
+  --logos-wrapper-display: flex;
+  --logos-wrapper-flex-wrap: wrap;
+  --logos-wrapper-gap: var(--spacing-xl, 3.2rem);
+  --logo-wrapper-flex: 0 0 var(--spacing-10xl, 9.6rem);
+  --logo-wrapper-display: flex;
+  --logo-wrapper-flex-dir: column;
+  --logo-wrapper-align-items: center;
+  --logo-wrapper-gap: var(--spacing-xs, 0.8rem);
+  --logo-width: var(--spacing-4xl, 5.6rem);
+  --logo-height: var(--spacing-4xl, 5.6rem);
+  --logo-margin: 0 0 var(--spacing-xs, 0.8rem);
 
-    .section-title {
-    }
+  background-color: var(--Gray-900, #132238);
+  .container {
+    padding: var(--container-padding);
 
     .tech-title {
+      color: var(--white, #fff);
+      margin: var(--tech-title-margin);
     }
 
     .tech-content {
       .main-logos,
       .secondary-logos {
-        .logos-title {
-          color: var(--secondary-color);
-          margin-bottom: var(--spacing-sm);
-        }
-
         .logos-subtitle {
-          color: var(--tertiary-font-color);
+          color: var(--quaternary-font-color);
+          margin: var(--logos-subtitle-margin);
           font-style: italic;
-          margin-bottom: var(--spacing-xxl);
 
           strong {
-            font-weight: var(--font-weight-bold);
+            font-weight: var(--font-weight-semi-bold, 600);
           }
         }
 
         .logos-wrapper {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, var(--spacing-5xl));
-          gap: var(--spacing-xl);
+          display: var(--logos-wrapper-display);
+          flex-wrap: var(--logos-wrapper-flex-wrap);
+          gap: var(--logos-wrapper-gap);
 
           .tech-logo-wrapper {
-            transition: var(--transition);
+            flex: var(--logo-wrapper-flex);
+            display: var(--logo-wrapper-display);
+            flex-direction: var(--logo-wrapper-flex-dir);
+            align-items: var(--logo-wrapper-align-items);
+            gap: var(--logo-wrapper-gap);
+            transition: var(--transition-all);
 
             &:hover {
               transform: scale(1.1);
             }
 
             .tech-logo {
-              height: var(--spacing-5xl);
-              margin-bottom: var(--spacing-xs);
+              width: var(--logo-width);
+              height: var(--logo-height);
+              margin-bottom: var(--logo-margin);
             }
 
             .logo-name {
@@ -683,9 +701,7 @@
       }
 
       .main-logos {
-        margin-bottom: var(--spacing-xxl);
-        padding-bottom: var(--spacing-xxl);
-        border-bottom: var(--border-bottom-separator);
+        margin: var(--main-logos-margin);
       }
     }
   }
