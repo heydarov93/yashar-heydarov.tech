@@ -39,6 +39,7 @@
   --primary-font-color: var(--Gray-900);
   --secondary-font-color: var(--Gray-600);
   --tertiary-font-color: var(--Gray-400);
+  --quaternary-font-color: var(--Gray-300);
 
   /* Font Weight */
   --font-weight-light: 300;
