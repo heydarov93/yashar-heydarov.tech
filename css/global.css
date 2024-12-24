@@ -35,6 +35,14 @@ img {
   object-fit: cover;
 }
 
+textarea,
+input {
+  resize: none;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
 .container {
   max-width: 132rem;
   width: 100%;
@@ -53,6 +61,8 @@ img {
   font-size: var(--spacing-md-sm, 1.6rem);
   font-weight: var(--font-weight-medium, 500);
   line-height: var(--spacing-lg, 2.4rem);
+  border: none;
+  cursor: pointer;
 }
 
 .btn-cta {
@@ -72,7 +82,7 @@ img {
 }
 
 .section-title {
-  color: var(--Gray-900, #132238);
+  color: var(--primary-font-color, #132238);
   font-size: var(--spacing-3xl, 4.8rem);
   font-style: normal;
   font-weight: var(--font-weight-semi-bold, 600);
@@ -81,7 +91,6 @@ img {
 
 .section-subtitle {
   color: var(--tertiary-font-color, #87909d);
-  font-family: 'Work Sans';
   font-size: var(--spacing-md, 1.8rem);
   font-style: normal;
   font-weight: var(--font-weight-regular, 400);
