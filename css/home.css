@@ -1199,3 +1199,81 @@
     }
   }
 }
+
+.footer {
+  --footer-min-h: 33rem;
+  --footer-display: flex;
+  --footer-align-items: center;
+
+  --container-padding: var(--spacing-xl, 3.2rem) 0;
+
+  --footer-content-display: flex;
+  --footer-content-justify: space-between;
+  --footer-content-gap: var(--spacing-xl, 3.2rem);
+
+  --logo-width: var(--spacing-4xl, 5.6rem);
+  --logo-height: var(--spacing-4xl, 5.6rem);
+
+  --navbar-display: flex;
+  --navbar-align-items: center;
+
+  --nav-list-display: flex;
+  --nav-list-align-items: center;
+  --nav-list-gap: var(--spacing-lg, 2.4rem);
+  --nav-link-font-size: var(--spacing-md-sm, 1.6rem);
+  --nav-link-line-height: var(--spacing-lg, 2.4rem);
+
+  --copy-display: flex;
+  --copy-align-items: center;
+  --copy-font-size: var(--spacing-md-sm, 1.6rem);
+  --copy-line-height: var(--spacing-lg, 2.4rem);
+
+  min-height: var(--footer-min-h, 33rem);
+  display: var(--footer-display);
+  align-items: var(--footer-align-items);
+  background-color: var(--Gray-900, #132238);
+
+  .container {
+    padding: var(--container-padding);
+
+    .footer-content {
+      display: var(--footer-content-display);
+      justify-content: var(--footer-content-justify);
+      gap: var(--footer-content-gap);
+
+      .footer-logo {
+        width: var(--logo-width);
+        height: var(--logo-height);
+      }
+
+      .footer-navbar {
+        display: var(--navbar-display);
+        align-items: var(--navbar-align-items);
+
+        .footer-nav-list {
+          display: var(--nav-list-display);
+          align-items: var(--nav-list-align-items);
+          gap: var(--nav-list-gap);
+
+          .footer-nav-link {
+            font-size: var(--nav-link-font-size);
+            line-height: var(--nav-link-line-height);
+            color: var(--Gray-50, #f0f1f3);
+
+            &:hover {
+              color: var(--primary-color-500, #39a2db);
+            }
+          }
+        }
+      }
+
+      .copyrights {
+        display: var(--copy-display);
+        align-items: var(--copy-align-items);
+        color: var(--Gray-50, #f0f1f3);
+        font-size: var(--copy-font-size);
+        line-height: var(--copy-line-height);
+      }
+    }
+  }
+}
