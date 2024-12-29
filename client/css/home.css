@@ -258,9 +258,6 @@
             gap: var(--spacing-md-sm, 1.6rem);
             color: var(--Gray-600, #556070);
             line-height: var(--spacing-lg, 2.4rem);
-
-            .about-subtitle {
-            }
           }
 
           .about-cta {
