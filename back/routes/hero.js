@@ -3,7 +3,7 @@ import db from '../db/conn.js';
 
 const router = express.Router();
 
-router.get('/hero', async (req, res) => {
+router.get('/', async (req, res) => {
   const heroData = db.collection('hero');
   const cursor = heroData.find({});
   const results = await cursor.toArray();
