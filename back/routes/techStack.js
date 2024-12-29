@@ -30,3 +30,5 @@ router.get('/secondary', async (req, res) => {
 
   res.send(results).status(200);
 });
+
+export default router;
