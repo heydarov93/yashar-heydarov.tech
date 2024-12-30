@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   const cursor = heroData.find({});
   const results = await cursor.toArray();
 
-  res.send(results).status(200);
+  res.json(results).status(200);
 });
 
 export default router;

@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   const secondaryCursor = secondaryTechs.find({});
   const secondaryResults = await secondaryCursor.toArray();
 
-  res.send([...mainResults, ...secondaryResults]).status(200);
+  res.status(200).json([...mainResults, ...secondaryResults]);
 });
 
 router.get('/main', async (req, res) => {
@@ -20,7 +20,7 @@ router.get('/main', async (req, res) => {
   const cursor = mainTechStack.find({});
   const results = await cursor.toArray();
 
-  res.send(results).status(200);
+  res.status(200).json(results);
 });
 
 router.get('/secondary', async (req, res) => {
@@ -28,7 +28,7 @@ router.get('/secondary', async (req, res) => {
   const cursor = secondaryTechStack.find({});
   const results = await cursor.toArray();
 
-  res.send(results).status(200);
+  res.status(200).json(results);
 });
 
 export default router;

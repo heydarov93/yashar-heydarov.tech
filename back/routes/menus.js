@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   const cursor = menus.find({});
   const results = await cursor.toArray();
 
-  res.send(results).status(200);
+  res.status(200).json(results);
 });
 
 export default router;
