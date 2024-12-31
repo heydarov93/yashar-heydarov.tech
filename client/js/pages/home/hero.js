@@ -18,30 +18,10 @@ class Hero {
 
     this.#heroApi = new HeroApi();
 
-    this.#fetchData();
-    console.log(this.#data);
-
     this.render();
   }
 
   async #fetchData() {
-    // this.#heroApi
-    //   .getAll()
-    //   .then((response) => {
-    //     if (!response.ok)
-    //       throw new Error(`API responded with status: ${response.status}`);
-
-    //     const data = response.json();
-    //     return data;
-    //   })
-    //   .then((data) => {
-    //     this.#data = data[0];
-    //   })
-    //   .catch((err) => {
-    //     const customError = new HeroError(err.message);
-    //     console.error(customError);
-    //   });
-    let finalData;
     try {
       const response = await this.#heroApi.getAll();
 
@@ -49,13 +29,11 @@ class Hero {
         throw new Error(`API responded with status: ${response.status}`);
 
       const data = await response.json();
-      finalData = data[0];
+      this.#data = data[0];
     } catch (err) {
       const customError = new HeroError(err.message);
       console.error(customError);
     }
-
-    return finalData;
   }
 
   async #updateDom() {
@@ -73,10 +51,10 @@ class Hero {
     this.btnCtaEl.innerText = this.#data.ctaText;
     this.btnCtaEl.href = this.#data.ctaLink;
     this.imgEl.src = this.#data.image;
-    // console.log(this.#data);
   }
 
-  render() {
+  async render() {
+    await this.#fetchData();
     this.#updateDom();
   }
 }
