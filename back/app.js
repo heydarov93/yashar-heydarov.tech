@@ -1,5 +1,6 @@
 import './loadEnvironments.js';
 import express from 'express';
+import cors from 'cors';
 import menus from './routes/menus.js';
 import hero from './routes/hero.js';
 import about from './routes/about.js';
@@ -8,11 +9,13 @@ import experiences from './routes/experiences.js';
 
 const app = express();
 
-// const hostName = 'localhost';
-const port = 3000;
+const port = process.env.PORT;
 
+// middlewares
 app.use(express.json());
+app.use(cors({ origin: process.env.CLIENT }));
 
+// routing
 app.use('/menus', menus);
 
 app.use('/hero', hero);
