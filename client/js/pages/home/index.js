@@ -1,3 +1,23 @@
-import Hero from './hero.js';
+import homeBase from './homeBase.js';
+import heroSection from './hero.js';
+import aboutSection from './about.js';
 
-new Hero('.hero-title', '.hero-subtitle', '#heroCta', '.hero-image');
+async function Home() {
+  try {
+    // initialize common funtions, datas for the whole page
+    await homeBase.init();
+
+    // get contact data to display it in several sections
+    const contactData = homeBase.getContact();
+
+    // inititalize Hero section
+    await heroSection.init(contactData.socials);
+
+    // initialize About section
+    await aboutSection.init();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export default Home;
