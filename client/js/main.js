@@ -1,2 +1,4 @@
 'use strict';
-import './pages/home/index.js';
+import Home from './pages/home/index.js';
+
+Home();
