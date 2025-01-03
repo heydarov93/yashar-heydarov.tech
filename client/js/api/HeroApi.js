@@ -1,4 +1,3 @@
-'use strict';
 import ApiService from './ApiService.js';
 import API_Config from '../config.js';
 
