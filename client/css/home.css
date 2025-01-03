@@ -107,6 +107,10 @@
             .btn-cta {
               font-weight: var(--font-weight-semi-bold, 600);
             }
+
+            .btn-cta[disabled] {
+              pointer-events: none;
+            }
           }
         }
 
@@ -252,7 +256,7 @@
             line-height: 5rem;
           }
 
-          .subtitle-wrapper {
+          .description-container {
             display: flex;
             flex-direction: column;
             gap: var(--spacing-md-sm, 1.6rem);
