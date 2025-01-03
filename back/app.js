@@ -2,6 +2,7 @@ import './loadEnvironments.js';
 import express from 'express';
 import cors from 'cors';
 import menus from './routes/menus.js';
+import contact from './routes/contact.js';
 import hero from './routes/hero.js';
 import about from './routes/about.js';
 import techStack from './routes/techStack.js';
@@ -17,6 +18,8 @@ app.use(cors({ origin: process.env.CLIENT }));
 
 // routing
 app.use('/menus', menus);
+
+app.use('/contact', contact);
 
 app.use('/hero', hero);
 
