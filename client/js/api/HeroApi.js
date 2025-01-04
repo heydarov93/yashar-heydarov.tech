@@ -6,8 +6,13 @@ class HeroApi extends ApiService {
     super(API_Config.BASE_URL);
   }
 
-  getAll() {
-    return this.request('/hero');
+  async getAll() {
+    try {
+      const response = await this.request('/hero');
+      return response;
+    } catch (err) {
+      throw new err();
+    }
   }
 }
 
