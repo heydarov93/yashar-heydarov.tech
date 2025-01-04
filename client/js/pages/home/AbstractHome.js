@@ -7,6 +7,9 @@ class AbstractHome {
 
     if (this.init == undefined)
       throw new Error('<init> method must be implemented');
+
+    if (this.updateDom == undefined)
+      throw new Error('<updateDom> method must be implemented');
   }
 }
 
