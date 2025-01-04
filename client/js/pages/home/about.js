@@ -1,4 +1,4 @@
-import AbstractHome from './absHome.js';
+import AbstractHome from './AbstractHome.js';
 import AboutApi from '../../api/AboutApi.js';
 
 class AboutError extends Error {
@@ -41,7 +41,7 @@ class About extends AbstractHome {
       this.#data.socials = socials;
 
       // update dom
-      this.#updateDom();
+      this.updateDom();
     } catch (err) {
       throw new AboutError(err.message, err.stack);
     }
@@ -63,7 +63,7 @@ class About extends AbstractHome {
     }
   }
 
-  #updateDom() {
+  updateDom() {
     this.imgEl.src = this.#data.image;
     this.titleEl.innerText = this.#data.title;
 
