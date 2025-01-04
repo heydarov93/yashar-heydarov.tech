@@ -1,16 +1,18 @@
 import HeroApi from '../../api/HeroApi.js';
-import AbstractHome from './absHome.js';
+import AbstractHome from './AbstractHome.js';
 
 class HeroError extends Error {
-  constructor(message) {
+  constructor(message, stack) {
     super(message);
     this.name = 'HeroError';
+    this.stack = stack;
   }
 }
 
 class Hero extends AbstractHome {
   #data = null;
   #heroApi;
+  heroSectionEl;
   titleEl;
   subtitleEl;
   btnCtaEl;
@@ -20,11 +22,12 @@ class Hero extends AbstractHome {
   constructor() {
     // Select DOM elements
     super();
-    this.titleEl = document.querySelector('.hero-title');
-    this.subtitleEl = document.querySelector('.hero-subtitle');
-    this.btnCtaEl = document.querySelector('#heroCta');
-    this.imgEl = document.querySelector('.hero-image');
-    this.socialsContainer = document.querySelector('.hero-socials');
+    this.heroSectionEl = document.querySelector('#heroSection');
+    this.titleEl = this.heroSectionEl.querySelector('.hero-title');
+    this.subtitleEl = this.heroSectionEl.querySelector('.hero-subtitle');
+    this.btnCtaEl = this.heroSectionEl.querySelector('#heroCta');
+    this.imgEl = this.heroSectionEl.querySelector('.hero-image');
+    this.socialsContainer = this.heroSectionEl.querySelector('.hero-socials');
 
     // Initialize API
     this.#heroApi = new HeroApi();
@@ -36,9 +39,9 @@ class Hero extends AbstractHome {
       try {
         await this.#fetchData();
         this.#data.socials = socials;
-        this.#updateDom();
+        this.updateDom();
       } catch (err) {
-        throw new HeroError(err.message);
+        throw new HeroError(err.message, err.stack);
       }
     }
   }
@@ -57,12 +60,12 @@ class Hero extends AbstractHome {
       // strore data
       this.#data = jsonData[0];
     } catch (err) {
-      throw new HeroError(err.message);
+      throw new HeroError(err.message, err.stack);
     }
   }
 
   // update hero section with dynamic data
-  #updateDom() {
+  updateDom() {
     if (!this.#data) return;
 
     // Replace keywords in the subtitle
