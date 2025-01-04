@@ -1,6 +1,7 @@
 import homeBase from './homeBase.js';
 import heroSection from './hero.js';
 import aboutSection from './about.js';
+import experienceSection from './experiences.js';
 
 async function Home() {
   try {
@@ -15,6 +16,9 @@ async function Home() {
 
     // initialize About section
     await aboutSection.init();
+
+    // initialize Experience section
+    await experienceSection.init();
   } catch (err) {
     console.error(err);
   }
