@@ -24,7 +24,7 @@ class Experience extends AbstractHome {
   cardsEl = [];
 
   #experienceApi;
-  #data = [];
+  #experiences = [];
   #activeCardData;
   activeCardId;
 
@@ -53,7 +53,7 @@ class Experience extends AbstractHome {
   }
 
   async init() {
-    if (!this.#data || this.#data?.length === 0) {
+    if (!this.#experiences || this.#experiences?.length === 0) {
       try {
         await this.#fetchData();
         this.updateDom();
@@ -80,7 +80,7 @@ class Experience extends AbstractHome {
       const jsonData = await response.json();
 
       // store data
-      this.#data = jsonData;
+      this.#experiences = jsonData;
     } catch (err) {
       throw new ExperienceError(err.message, err.stack);
     }
@@ -122,7 +122,7 @@ class Experience extends AbstractHome {
   }
 
   #storeActiveCardData() {
-    this.#activeCardData = this.#data.find(
+    this.#activeCardData = this.#experiences.find(
       (exp) => exp._id === this.activeCardId
     );
   }
@@ -131,7 +131,7 @@ class Experience extends AbstractHome {
     let cardsHTML = '';
 
     // render only 3 most recent experiences
-    this.#data?.slice(0, 3).forEach((exp, index) => {
+    this.#experiences?.slice(0, 3).forEach((exp, index) => {
       // convert dates to human readable format
       const startDate = formatDate(exp.startDate);
       const endDate = exp.endDate ? formatDate(exp.endDate) : 'Present';
