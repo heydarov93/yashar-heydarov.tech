@@ -2,6 +2,7 @@ import homeBase from './homeBase.js';
 import heroSection from './hero.js';
 import aboutSection from './about.js';
 import experienceSection from './experiences.js';
+import portfolioSection from './portfolio.js';
 
 async function Home() {
   try {
@@ -19,6 +20,9 @@ async function Home() {
 
     // initialize Experience section
     await experienceSection.init();
+
+    // initialize Portfolio section
+    await portfolioSection.init();
   } catch (err) {
     console.error(err);
   }
