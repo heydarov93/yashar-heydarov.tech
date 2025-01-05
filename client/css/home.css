@@ -535,10 +535,13 @@
             height: var(--card-img-h);
             overflow: hidden;
             flex-shrink: 0;
+
+            img {
+              transition: var(--transition-all);
+            }
           }
 
           &:hover .card-img img {
-            transition: var(--transition-all);
             transform: scale(1.1);
           }
 
@@ -628,7 +631,7 @@
         }
       }
       .btn-wrapper {
-        display: flex;
+        display: none;
         justify-content: center;
       }
     }
