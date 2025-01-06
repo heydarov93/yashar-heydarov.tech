@@ -1,34 +1,49 @@
 import express from 'express';
+import getAllDocs from '../helpers/getAllDocs.js';
 import db from '../db/conn.js';
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const mainTechs = db.collection('main_tech_stack');
-  const mainCursor = mainTechs.find({});
-  const mainResults = await mainCursor.toArray();
+  try {
+    const techs = await getAllDocs('tech_stack');
 
-  const secondaryTechs = db.collection('secondary_tech_stack');
-  const secondaryCursor = secondaryTechs.find({});
-  const secondaryResults = await secondaryCursor.toArray();
+    const mainResults = techs.filter((tech) => tech.category === 1);
+    const secondaryResults = techs.filter((tech) => tech.category === 2);
 
-  res.status(200).json([...mainResults, ...secondaryResults]);
+    res.status(200).json({ main: mainResults, secondary: secondaryResults });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json('Something went wrong during getting tech stack data');
+  }
 });
 
 router.get('/main', async (req, res) => {
-  const mainTechStack = db.collection('main_tech_stack');
-  const cursor = mainTechStack.find({});
-  const results = await cursor.toArray();
+  try {
+    const techs = await getAllDocs('tech_stack');
+    const results = techs.filter((tech) => tech.category === 1);
 
-  res.status(200).json(results);
+    res.status(200).json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json('Something went wrong during getting main tech stack data');
+  }
 });
 
 router.get('/secondary', async (req, res) => {
-  const secondaryTechStack = db.collection('secondary_tech_stack');
-  const cursor = secondaryTechStack.find({});
-  const results = await cursor.toArray();
+  try {
+    const techs = await getAllDocs('tech_stack');
+    const results = techs.filter((tech) => tech.category === 2);
 
-  res.status(200).json(results);
+    res.status(200).json(results);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json('Something went wrong during getting secondary tech stack data');
+  }
 });
 
 export default router;
