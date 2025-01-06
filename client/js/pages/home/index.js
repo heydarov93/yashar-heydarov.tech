@@ -3,6 +3,7 @@ import heroSection from './hero.js';
 import aboutSection from './about.js';
 import experienceSection from './experiences.js';
 import portfolioSection from './portfolio.js';
+import techStackSection from './techStack.js';
 
 async function Home() {
   try {
@@ -16,13 +17,16 @@ async function Home() {
     await heroSection.init(contactData.socials);
 
     // initialize About section
-    await aboutSection.init();
+    await aboutSection.init(contactData.socials);
 
     // initialize Experience section
     await experienceSection.init();
 
     // initialize Portfolio section
     await portfolioSection.init();
+
+    // initialize Tech Stack section
+    await techStackSection.init();
   } catch (err) {
     console.error(err);
   }
