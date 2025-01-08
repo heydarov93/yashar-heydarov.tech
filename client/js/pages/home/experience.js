@@ -179,7 +179,10 @@ class Experience extends AbstractHome {
     this.cardsEl.forEach((card) => {
       card.addEventListener('click', () => {
         // select active card
-        const activeCard = document.querySelector('.active-card');
+        // there are another active-card classes in different sections
+        // so we need to select the active card only in the experience section
+        const activeCard =
+          this.experienceSectionEl.querySelector('.active-card');
 
         // do nothing if clicked card is already active
         if (card.id === this.activeCardId) return;
