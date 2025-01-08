@@ -1,9 +1,10 @@
 import ContactApi from '../../api/ContactApi.js';
 
 class HomeBaseError extends Error {
-  constructor(message) {
+  constructor(message, stack) {
     super(message);
     this.name = 'HomeBase';
+    this.stack;
   }
 }
 
@@ -19,9 +20,13 @@ class HomeBase {
     if (!this.#contact) {
       try {
         const response = await this.#contactApi.getAll();
+
+        if (!response.ok)
+          throw new Error(`API responded with status: ${response.status}`);
+
         this.#contact = await response.json();
       } catch (err) {
-        throw new HomeBaseError(err.message);
+        throw new HomeBaseError(err.message, err.stack);
       }
     }
   }
