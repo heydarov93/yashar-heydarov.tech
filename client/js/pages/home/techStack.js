@@ -55,7 +55,6 @@ class TechStack extends AbstractHome {
       const techStack = await response.json();
       this.#mainStack = techStack.main;
       this.#secondaryStack = techStack.secondary;
-      console.log(this.#mainStack, this.#secondaryStack);
     } catch (err) {
       throw new TechStackError('Error fetching tech stack data', err.stack);
     }
