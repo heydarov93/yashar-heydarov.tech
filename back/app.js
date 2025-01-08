@@ -8,6 +8,7 @@ import about from './routes/about.js';
 import techStack from './routes/techStack.js';
 import experiences from './routes/experiences.js';
 import projects from './routes/projects.js';
+import educations from './routes/educations.js';
 
 const app = express();
 
@@ -31,6 +32,8 @@ app.use('/tech-stack', techStack);
 app.use('/experiences', experiences);
 
 app.use('/projects', projects);
+
+app.use('/edu', educations);
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
