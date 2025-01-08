@@ -327,14 +327,15 @@
       <!-- Blog end -->
 
       <!-- Education start -->
-      <section class="edu">
+      <section id="eduSection" class="edu">
         <div class="container">
           <div class="edu-content">
             <div class="edu-left">
               <div class="edu-cards">
-                <div class="edu-card active-card">
+                <!-- Dynamic data -->
+                <!--               <div class="edu-card active-card">
                   <div class="rectangle"></div>
-                  <!-- Card Top -->
+                 
                   <div class="card-content">
                     <div class="organization-logo">
                       <img
@@ -363,73 +364,7 @@
                       <span class="gpa"> 3.5/4.0 GPA </span>
                     </div>
                   </div>
-                </div>
-
-                <div class="edu-card">
-                  <div class="rectangle"></div>
-                  <!-- Card Top -->
-                  <div class="card-content">
-                    <div class="organization-logo">
-                      <img
-                        src="./assets/images/edu-logo-1.png"
-                        alt="Organization Logo"
-                      />
-                    </div>
-                    <div class="program-info">
-                      <h4 class="program-title">
-                        Bachelor of Science in Computer Science
-                      </h4>
-
-                      <p
-                        class="organization-name"
-                        title="University of the People"
-                      >
-                        University of the People
-                      </p>
-                      <span class="date-range">
-                        <time class="start-date" datetime="01.01.2024">
-                          01.01.2024
-                        </time>
-                        -
-                        <time class="end-date">Present</time>
-                      </span>
-                      <!-- <span class="gpa"> 3.5/4.0 GPA </span> -->
-                    </div>
-                  </div>
-                </div>
-
-                <div class="edu-card">
-                  <div class="rectangle"></div>
-                  <!-- Card Top -->
-                  <div class="card-content">
-                    <div class="organization-logo">
-                      <img
-                        src="./assets/images/edu-logo-1.png"
-                        alt="Organization Logo"
-                      />
-                    </div>
-                    <div class="program-info">
-                      <h4 class="program-title">
-                        Bachelor of Science in Computer Science
-                      </h4>
-
-                      <p
-                        class="organization-name"
-                        title="University of the People"
-                      >
-                        University of the People
-                      </p>
-                      <span class="date-range">
-                        <time class="start-date" datetime="01.01.2024">
-                          01.01.2024
-                        </time>
-                        -
-                        <time class="end-date">Present</time>
-                      </span>
-                      <!-- <span class="gpa"> 3.5/4.0 GPA </span> -->
-                    </div>
-                  </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="edu-right">
@@ -437,55 +372,44 @@
               <article class="edu-details">
                 <header class="program-header">
                   <h3 class="program-title">
-                    <a href="#" target="_blank">
-                      Bachelor of Science in Computer Science</a
+                    <a class="doc-link" href="#" target="_blank">
+                      <!-- Program name & link to the diploma or certificate --></a
                     >
                   </h3>
                   <h4 class="organization-name">
-                    <a href="#" target="_blank">University of the People</a>
+                    <a class="web-link" href="#" target="_blank">
+                      <!-- University or school name -->
+                    </a>
                   </h4>
                   <p class="edu-date">
-                    <time datetime="2024-01-01">January, 2024</time> -
-                    <time datetime="2024-12-31">Present</time>
+                    <time class="start-date" datetime=""
+                      ><!-- Start of the program --></time
+                    >
+                    -
+                    <time class="end-date" datetime=""
+                      ><!-- End of the program --></time
+                    >
                   </p>
                 </header>
 
                 <!-- Curriculum Section -->
                 <section class="edu-details-section">
                   <h5 class="edu-details-title">Curriculum</h5>
-                  <p class="edu-details-overview">
-                    Core subjects include Programming, Data Structures, Web
+                  <p class="edu-details-overview curriculum-overview">
+                    <!-- Core subjects include Programming, Data Structures, Web
                     Development, AI, Machine Learning, Cloud Computing, Software
-                    Engineering, and more.
-                    <a href="#" class="learn-more" target="_blank"
-                      >Explore Full Curriculum</a
-                    >
+                    Engineering, and more. -->
                   </p>
-                </section>
-
-                <!-- Edu Tech Stack Section -->
-                <section class="edu-details-section">
-                  <h5 class="edu-details-title">Tech Stack</h5>
-                  <p class="edu-details-overview">
-                    Technologies covered include JavaScript, Python, React,
-                    Node.js, SQL, AWS, Docker, and more.
-                    <a href="#" class="learn-more" target="_blank"
-                      >Learn More</a
-                    >
-                  </p>
+                  <a href="#" class="learn-more curriculum-link" target="_blank"
+                    >Explore Full Curriculum</a
+                  >
                 </section>
 
                 <!-- University Overview Section -->
                 <section class="edu-details-section">
-                  <h5 class="edu-details-title">
-                    About University of the People
-                  </h5>
-                  <p class="edu-details-overview">
-                    University of the People (UoPeople) is a non-profit,
-                    American-accredited, tuition-free online university that
-                    offers global access to higher education. With a
-                    revolutionary online model, UoPeople provides high-quality
-                    degrees in various fields with world-class instructors.
+                  <h5 class="edu-details-title">About</h5>
+                  <p class="edu-details-overview organization-overview">
+                    <!-- Summary of the university/school -->
                   </p>
                 </section>
               </article>
@@ -496,7 +420,7 @@
       <!-- Education end -->
 
       <!-- Contact start -->
-      <section class="contact">
+      <section id="contactSection" class="contact">
         <div class="container">
           <div class="contact-content">
             <div class="contact-left">
@@ -510,7 +434,8 @@
                 </p>
               </header>
               <ul class="socials">
-                <li>
+                <!-- Dynamic data -->
+                <!-- <li>
                   <a
                     class="social-link"
                     href="https://www.linkedin.com/in/yashar-heydarov/"
@@ -524,39 +449,7 @@
                       <span class="social-username">/in/yashar-heydarov</span>
                     </p>
                   </a>
-                </li>
-                <li>
-                  <a
-                    class="social-link"
-                    href="https://github.com/heydarov93"
-                    target="_blank"
-                  >
-                    <span class="icon-wrapper">
-                      <i class="fa-brands fa-github icon"></i>
-                    </span>
-                    <p class="social-info">
-                      <span class="social-label">Github:</span>
-                      <span class="social-username">/heydarov93</span>
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="social-link"
-                    href="mailto:yashar.heyderov@outlook.com"
-                    target="_blank"
-                  >
-                    <span class="icon-wrapper">
-                      <i class="fa-solid fa-square-envelope icon"></i>
-                    </span>
-                    <p class="social-info">
-                      <span class="social-label">Email:</span>
-                      <span class="social-username">
-                        yashar.heydarov@outlook.com
-                      </span>
-                    </p>
-                  </a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="contact-right">
