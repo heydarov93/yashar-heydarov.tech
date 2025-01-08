@@ -1,9 +1,11 @@
 import homeBase from './homeBase.js';
 import heroSection from './hero.js';
 import aboutSection from './about.js';
-import experienceSection from './experiences.js';
+import experienceSection from './experience.js';
 import portfolioSection from './portfolio.js';
 import techStackSection from './techStack.js';
+import educationSection from './education.js';
+import contactSection from './contact.js';
 
 async function Home() {
   try {
@@ -27,6 +29,12 @@ async function Home() {
 
     // initialize Tech Stack section
     await techStackSection.init();
+
+    // initialize Education section
+    await educationSection.init();
+
+    // initialize Contact section
+    await contactSection.init(contactData);
   } catch (err) {
     console.error(err);
   }
