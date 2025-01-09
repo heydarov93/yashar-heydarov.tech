@@ -36,8 +36,7 @@
         color: #333;
       }
 
-      .login,
-      .register {
+      .auth {
         color: var(--tertiary-font-color);
         font-weight: var(--font-weight-regular);
       }
@@ -1243,12 +1242,13 @@
 
   --nav-list-display: flex;
   --nav-list-align-items: center;
+  --nav-list-flex-wrap: wrap;
   --nav-list-gap: var(--spacing-lg, 2.4rem);
   --nav-link-font-size: var(--spacing-md-sm, 1.6rem);
   --nav-link-line-height: var(--spacing-lg, 2.4rem);
 
   --copy-display: flex;
-  --copy-align-items: center;
+  --copy-align-items: flex-start;
   --copy-font-size: var(--spacing-md-sm, 1.6rem);
   --copy-line-height: var(--spacing-lg, 2.4rem);
 
@@ -1279,10 +1279,12 @@
       .footer-navbar {
         display: var(--navbar-display);
         align-items: var(--navbar-align-items);
+        flex: 0 1 50rem;
 
         .footer-nav-list {
           display: var(--nav-list-display);
           align-items: var(--nav-list-align-items);
+          flex-wrap: var(--nav-list-flex-wrap);
           gap: var(--nav-list-gap);
 
           .footer-nav-link {
