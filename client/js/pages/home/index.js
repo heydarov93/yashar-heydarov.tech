@@ -7,7 +7,7 @@ import techStackSection from './techStack.js';
 import educationSection from './education.js';
 import contactSection from './contact.js';
 
-async function Home() {
+async function HomePage() {
   try {
     // initialize common funtions, datas for the whole page
     await homeBase.init();
@@ -40,4 +40,4 @@ async function Home() {
   }
 }
 
-export default Home;
+export default HomePage;
