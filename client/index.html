@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- Header start -->
-    <header class="header">
+    <header id="headerSection" class="header">
       <div class="container">
         <div class="logo-wrapper">
           <a href="/" class="logo-link"
@@ -26,17 +26,16 @@
 
         <nav class="navbar">
           <ul class="nav-list auth-wrapper">
-            <li><a class="nav-item login nav-hover" href="#">Login</a></li>
+            <!-- Dynamic data -->
+            <!-- <li><a class="nav-item auth nav-hover" href="#">Login</a></li>
             <li>
-              <a class="nav-item register nav-hover" href="#">Register</a>
-            </li>
+              <a class="nav-item auth nav-hover" href="#">Register</a>
+            </li> -->
           </ul>
-          <ul class="nav-list">
-            <li><a class="nav-item nav-hover" href="#">Home</a></li>
-            <li><a class="nav-item nav-hover" href="#">About</a></li>
-            <li><a class="nav-item nav-hover" href="#">Projects</a></li>
-            <li><a class="nav-item nav-hover" href="#">Blog</a></li>
-            <li><a class="btn btn-cta" href="#">Contact</a></li>
+          <ul class="nav-list main-nav"></ul>
+            <!-- Dynamic data -->
+            <!-- <li><a class="nav-item nav-hover" href="#">Home</a></li>
+            <li><a class="btn btn-cta" href="#">Contact</a></li> -->
           </ul>
         </nav>
       </div>
@@ -230,7 +229,7 @@
       <!-- Tech stack end -->
 
       <!-- Blog start -->
-      <section class="blog">
+      <section id="blogSection" class="blog">
         <div class="container">
           <header class="blog-heading">
             <h2 class="section-title blog-title">Blog</h2>
@@ -508,7 +507,7 @@
     </main>
 
     <!-- Footer start -->
-    <footer class="footer">
+    <footer id="footerSection" class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
@@ -521,28 +520,18 @@
           </div>
           <nav class="footer-navbar">
             <ul class="footer-nav-list">
-              <li class="footer-nav-item">
+              <!-- Dynamic data -->
+              <!-- <li class="footer-nav-item">
                 <a href="#" class="footer-nav-link">Home</a>
-              </li>
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">About</a>
-              </li>
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">Experience</a>
-              </li>
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">Portfolio</a>
-              </li>
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">Blog</a>
-              </li>
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">Contact</a>
-              </li>
+              </li> -->
+              
             </ul>
           </nav>
           <div class="copyrights">
-            <p>Copyright &copy; 2024 Yashar Heydarov. All rights reserved.</p>
+            <p>
+              Copyright &copy; <time class="year"><!-- Dynamic data --></time> Yashar Heydarov.
+              All rights reserved.
+            </p>
           </div>
         </div>
       </div>
