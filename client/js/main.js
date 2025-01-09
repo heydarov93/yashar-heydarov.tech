@@ -1,4 +1,11 @@
 'use strict';
-import Home from './pages/home/index.js';
+import layout from './layout/layout.js';
+import HomePage from './pages/home/index.js';
 
-Home();
+const route = window.location.pathname;
+
+layout.init(route);
+
+if (route === '/' || route.startsWith('/#')) {
+  HomePage();
+}
