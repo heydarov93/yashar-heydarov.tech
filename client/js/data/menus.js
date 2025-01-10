@@ -35,7 +35,7 @@ export const homeMenus = {
       link: '#techStackSection',
     },
     {
-      name: 'Blog',
+      name: 'My notes',
       link: '/blogs',
     },
     {
