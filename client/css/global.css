@@ -16,6 +16,7 @@ body {
   font-size: var(--spacing-md, 1.8rem);
   line-height: var(--spacing-lg-md, 2rem);
   background-color: var(--white, #fff);
+  overflow-x: hidden;
 }
 
 ul {
