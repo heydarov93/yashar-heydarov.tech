@@ -83,7 +83,7 @@ class Portfolio extends AbstractHome {
                 </div>
                 <div class="card-content">
                   <div>
-                    <span class="card-subtitle">${role}</span>
+                    <span class="card-subtitle">${role.role}</span>
                     <h4 class="card-title">${project.title}</h4>
                     <p class="card-text">
                       ${project.description}
