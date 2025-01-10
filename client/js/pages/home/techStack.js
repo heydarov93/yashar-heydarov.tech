@@ -81,7 +81,7 @@ class TechStack extends AbstractHome {
                     src="${logo.logoPath}"
                     alt="${logo.name} logo"
                   />
-                  <p class="logo-name">${logo.name}"</p>
+                  <p class="logo-name">${logo.name}</p>
                 </div>`;
     });
 
