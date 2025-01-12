@@ -35,6 +35,10 @@ export const homeMenus = {
       link: '#techStackSection',
     },
     {
+      name: 'My Notes',
+      link: '/blog',
+    },
+    {
       name: 'Education',
       link: '#eduSection',
     },
