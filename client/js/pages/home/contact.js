@@ -14,18 +14,22 @@ class Contact extends AbstractHome {
   #contactApi;
   contactSectionEl;
   socialsContainer;
+  formEl;
 
   constructor() {
     // Select DOM elements
     super();
     this.contactSectionEl = document.querySelector('#contactSection');
     this.socialsContainer = this.contactSectionEl.querySelector('.socials');
+    this.formEl = this.contactSectionEl.querySelector('#contactForm');
+
+    this.formEl.addEventListener('submit', this.onSubmit.bind(this));
 
     // Initialize API
     this.#contactApi = new ContactApi();
   }
 
-  // initializes hero section by fetching data and updating html
+  // initializes contact section and updates html
   async init(contactData) {
     if (!this.#data) {
       try {
@@ -37,32 +41,14 @@ class Contact extends AbstractHome {
     }
   }
 
-  // fetch hero related data and store it
-  //   async #fetchData() {
-  //     try {
-  //         const response = await this.#contactApi.getAll();
-
-  //       if (!response.ok) {
-  //         throw new Error(`API responded with status: ${response.status}`);
-  //       }
-
-  //       const jsonData = await response.json();
-
-  //       // store data
-  //       this.#data = jsonData[0];
-  //     } catch (err) {
-  //       throw new ContactError(err.message, err.stack);
-  //     }
-  //   }
-
-  // update hero section with dynamic data
+  // update contact section
   updateDom() {
     if (!this.#data) return;
 
     this.#renderSocials();
   }
 
-  // update social media component inside hero section
+  // update social media component inside contact section
   #renderSocials() {
     let socialsHTML = ``;
     this.#data?.socials?.forEach((social) => {
@@ -86,6 +72,38 @@ class Contact extends AbstractHome {
     });
 
     this.socialsContainer.innerHTML = socialsHTML;
+  }
+
+  // send email
+  async sendEmail(from, name, message) {
+    try {
+      const response = await this.#contactApi.sendEmail(from, name, message);
+
+      if (!response.ok)
+        throw new ContactError(`Email not sent: ${response.status}`);
+    } catch (err) {
+      throw new ContactError(err.message, err.stack);
+    }
+  }
+
+  // onSubmit handler for contact form
+  async onSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const from = formData.get('email');
+    const name = formData.get('name');
+    const message = formData.get('message');
+
+    try {
+      await this.sendEmail(from, name, message);
+      form.reset();
+      console.log('Email sent successfully');
+    } catch (err) {
+      console.warn('Something went wrong. Please try again later');
+      throw new ContactError(err.message, err.stack);
+    }
   }
 }
 
