@@ -11,7 +11,7 @@ class HeroApi extends ApiService {
       const response = await this.request('/hero');
       return response;
     } catch (err) {
-      throw new err();
+      throw err;
     }
   }
 }
