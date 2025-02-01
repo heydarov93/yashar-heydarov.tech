@@ -1213,6 +1213,12 @@
             }
           }
 
+          .form-error-msg {
+            color: var(--form-error-msg-color, #ff0033);
+            font-size: var(--spacing-sm, 1.4rem);
+            line-height: 150%;
+          }
+
           .form-btn {
             margin: var(--form-btn-margin);
           }
