@@ -108,3 +108,47 @@ input {
   color: var(--Gray-700, #424e60);
   transition: var(--transition-all);
 }
+
+/* Notification popup styling */
+.pop-up {
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white, #fff);
+  font-size: var(--spacing-md, 1.8rem);
+  box-shadow: 0rem 3.2rem 9.6rem 0rem rgba(28, 25, 25, 0.16);
+  border-radius: var(--spacing-2xs, 0.4rem);
+  z-index: 1000;
+  overflow: hidden;
+
+  .pop-up-content {
+    padding: var(--spacing-sm, 1.4rem) var(--spacing-md, 1.8rem);
+    position: relative;
+    overflow: hidden;
+
+    .underline {
+      height: 0.4rem;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &.success {
+    color: var(--success-color, #4caf50);
+
+    .underline {
+      background-color: var(--success-color, #4caf50);
+    }
+  }
+
+  &.error {
+    color: var(--error-color, #f44336);
+
+    .underline {
+      background-color: var(--error-color, #f44336);
+    }
+  }
+}
