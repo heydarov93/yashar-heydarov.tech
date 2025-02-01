@@ -15,6 +15,21 @@ class Contact extends AbstractHome {
   contactSectionEl;
   socialsContainer;
   formEl;
+  #formInputInfos = {
+    name: {
+      value: '',
+      errorTextEl: null,
+    },
+    from: {
+      // from is email address of the sender
+      value: '',
+      errorTextEl: null,
+    },
+    message: {
+      value: '',
+      errorTextEl: null,
+    },
+  };
 
   constructor() {
     // Select DOM elements
@@ -24,6 +39,14 @@ class Contact extends AbstractHome {
     this.formEl = this.contactSectionEl.querySelector('#contactForm');
 
     this.formEl.addEventListener('submit', this.onSubmit.bind(this));
+
+    // Select error text elements
+    this.#formInputInfos.name.errorTextEl =
+      this.formEl.querySelector('#nameErrorText');
+    this.#formInputInfos.from.errorTextEl =
+      this.formEl.querySelector('#emailErrorText');
+    this.#formInputInfos.message.errorTextEl =
+      this.formEl.querySelector('#messageErrorText');
 
     // Initialize API
     this.#contactApi = new ContactApi();
@@ -92,18 +115,87 @@ class Contact extends AbstractHome {
 
     const form = event.target;
     const formData = new FormData(form);
-    const from = formData.get('email');
-    const name = formData.get('name');
-    const message = formData.get('message');
+    this.#formInputInfos.name.value = formData.get('name');
+    this.#formInputInfos.from.value = formData.get('email');
+    this.#formInputInfos.message.value = formData.get('message');
 
     try {
+      // validate form fields
+      if (!this.validateForm()) return;
+
+      // send email to backend
       await this.sendEmail(from, name, message);
+
+      // clear form fields
       form.reset();
       console.log('Email sent successfully');
     } catch (err) {
       console.warn('Something went wrong. Please try again later');
       throw new ContactError(err.message, err.stack);
     }
+  }
+
+  // validate form fields
+  validateForm() {
+    const { name, from: email, message } = this.#formInputInfos;
+
+    // clear previous error messages
+    name.errorTextEl.textContent =
+      email.errorTextEl.textContent =
+      message.errorTextEl.textContent =
+        '';
+
+    // check if any field is empty and show error message if so
+    name.errorTextEl.textContent = !name.value?.trim()
+      ? 'Please enter your name'
+      : '';
+    email.errorTextEl.textContent = !email.value?.trim()
+      ? 'Please enter your email'
+      : '';
+    message.errorTextEl.textContent = !message.value?.trim()
+      ? 'Please enter your message'
+      : '';
+
+    // check if any error message is present in any field and return false
+    if (
+      name.errorTextEl.textContent ||
+      email.errorTextEl.textContent ||
+      message.errorTextEl.textContent
+    )
+      return false;
+
+    // check if email is valid and show error message if not
+    const isValidEmail = this.#validateEmail(email.value);
+
+    if (!isValidEmail) {
+      email.errorTextEl.textContent = 'Please enter a valid email';
+      return false;
+    }
+
+    // check if name is too short or too long
+    if (name.value.length < 3 || name.value.length > 20) {
+      name.errorTextEl.textContent =
+        'Name should be between 3 and 20 characters';
+      return false;
+    }
+
+    // check if message is too short or too long
+    if (message.value.length < 10 || message.value.length > 1000) {
+      message.errorTextEl.textContent =
+        'Message should be between 10 and 1000 characters';
+      return false;
+    }
+
+    return true;
+  }
+
+  // validate email
+  #validateEmail(email) {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
   }
 }
 
