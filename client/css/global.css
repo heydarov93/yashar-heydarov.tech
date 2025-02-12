@@ -50,6 +50,11 @@ input {
   margin: 0 auto;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--primary-color-200, hsl(201, 69%, 84%)) !important;
+}
+
 .btn,
 .btn-cta,
 .nav-item {
@@ -133,6 +138,7 @@ input {
       position: absolute;
       bottom: 0;
       left: 0;
+      animation: underline 0.8s ease-in-out;
     }
   }
 
