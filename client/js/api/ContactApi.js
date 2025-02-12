@@ -16,17 +16,13 @@ class ContactApi extends ApiService {
   }
 
   async sendEmail(from, name, message) {
-    try {
-      const response = await this.request('/contact/send-email', 'POST', {
-        from,
-        name,
-        message,
-      });
+    const response = await this.request('/contact/send-email', 'POST', {
+      from,
+      name,
+      message,
+    });
 
-      return response;
-    } catch (err) {
-      throw err;
-    }
+    return response;
   }
 }
 
