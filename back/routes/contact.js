@@ -2,6 +2,8 @@ import express from 'express';
 import getAllDocs from '../helpers/getAllDocs.js';
 import sendEmail from '../helpers/sendEmail.js';
 import validateEmail from '../helpers/validateEmail.js';
+import { sanitizeEmailSending } from '../helpers/sanitizeEmailSending.js';
+import { validationResult } from 'express-validator';
 
 const router = express.Router();
 
@@ -16,15 +18,27 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/send-email', async (req, res) => {
+// validate inputs with
+router.post('/send-email', sanitizeEmailSending(), async (req, res) => {
   try {
+    // get all errors with messages from validation result
+    const errors = validationResult(req);
+
+    // if there is an error return 400 status code and error messages
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        errors: errors.array().map((err) => {
+          // only send array of object with the input name and relative error message
+          return {
+            inputName: err.path,
+            message: err.msg,
+          };
+        }),
+      });
+    }
+
+    // send email if everything is ok
     const { from, name, message } = req.body;
-
-    if (!from?.trim() || !name?.trim() || !message?.trim())
-      return res.status(400).json('Missing required fields');
-
-    if (!validateEmail(from))
-      return res.status(400).json('Invalid email address');
 
     await sendEmail(from, name, message);
 
