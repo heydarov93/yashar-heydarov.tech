@@ -1,33 +1,68 @@
 class Notification {
-  // type can be 'success' or 'error'
-  constructor(message, type) {
-    this.message = message;
-    this.type = type;
+  popUpEl;
+  popUpContentEl;
+  underLineEl;
+  messageEl;
+  message; // message to display
+  type; // type can be 'success' or 'error'
+  isDisplayed; // true if pop up on the screen, otherwise false
+  timeOut;
+
+  constructor() {
+    // Popup is not displayed initially
+    this.isDisplayed = false;
 
     // Create notification wrapper with appropriate styles and classes
-    const popUpEl = document.createElement('div');
-    popUpEl.classList.add('pop-up');
-    popUpEl.classList.add(type);
+    this.popUpEl = document.createElement('div');
+    this.popUpEl.style.display = 'none';
+    this.popUpEl.classList.add('pop-up');
 
-    const popUpContentEl = document.createElement('div');
-    popUpContentEl.classList.add('pop-up-content');
+    // Create notification content wrapper with appropriate styles and classes
+    this.popUpContentEl = document.createElement('div');
+    this.popUpContentEl.classList.add('pop-up-content');
 
     // Create underline element and add appropriate styles based on the type of notification
     // and it will be animated
-    const underLineEl = document.createElement('div');
-    underLineEl.classList.add('underline');
+    this.underLineEl = document.createElement('div');
+    this.underLineEl.classList.add('underline');
 
     // Create message element and add appropriate text and classes
     // based on the type of notification
-    const messageEl = document.createElement('p');
-    messageEl.classList.add('message');
-    messageEl.textContent = message;
+    this.messageEl = document.createElement('p');
+    this.messageEl.classList.add('message');
 
     // Append elements to the DOM
-    document.body.appendChild(popUpEl);
-    popUpEl.appendChild(popUpContentEl);
-    popUpContentEl.appendChild(messageEl);
-    popUpContentEl.appendChild(underLineEl);
+    document.body.appendChild(this.popUpEl);
+    this.popUpEl.appendChild(this.popUpContentEl);
+    this.popUpContentEl.appendChild(this.messageEl);
+    this.popUpContentEl.appendChild(this.underLineEl);
+  }
+
+  // Show notification message
+  show(message, type) {
+    // first hide existed popup
+    this.hide();
+
+    // insert text message and give type of the message
+    this.messageEl.textContent = message;
+    this.popUpEl.classList.add(type);
+    this.popUpEl.style.display = 'block';
+    this.isDisplayed = true;
+
+    // hide popup after a couple of seconds
+    this.timeOut = setTimeout(() => {
+      this.popUpEl.style.display = 'none';
+      this.isDisplayed = false;
+    }, 3000);
+  }
+
+  // Hide notification message
+  hide() {
+    // first clear, because time out is async
+    // but we need immediately to hide it, without waiting
+    clearTimeout(this.timeOut);
+    this.popUpEl.style.display = 'none';
+    this.isDisplayed = false;
   }
 }
 
