@@ -18,10 +18,6 @@ class ApiService {
 
     const response = await fetch(`${this.#baseUrl}${endpoint}`, options);
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-
     return response;
   }
 }
