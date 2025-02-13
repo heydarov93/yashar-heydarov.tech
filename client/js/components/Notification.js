@@ -41,19 +41,26 @@ class Notification {
   // Show notification message
   show(message, type) {
     // first hide existed popup
+    // this avoids UI bugs during
+    // sequential call of show method
     this.hide();
 
-    // insert text message and give type of the message
-    this.messageEl.textContent = message;
-    this.popUpEl.classList.add(type);
-    this.popUpEl.style.display = 'block';
-    this.isDisplayed = true;
+    // this setTimeout ensures that the DOM has time to update
+    // after hiding the popup before showing it again
+    setTimeout(() => {
+      // insert text message and give type of the message
+      this.messageEl.textContent = message;
+      this.popUpEl.classList.remove('error', 'success');
+      this.popUpEl.classList.add(type);
+      this.popUpEl.style.display = 'block';
+      this.isDisplayed = true;
 
-    // hide popup after a couple of seconds
-    this.timeOut = setTimeout(() => {
-      this.popUpEl.style.display = 'none';
-      this.isDisplayed = false;
-    }, 3000);
+      // hide popup after a couple of seconds
+      this.timeOut = setTimeout(() => {
+        this.popUpEl.style.display = 'none';
+        this.isDisplayed = false;
+      }, 3000);
+    }, 0);
   }
 
   // Hide notification message
