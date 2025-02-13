@@ -169,10 +169,6 @@ class Contact extends AbstractHome {
       // clear form fields
       form.reset();
     } catch (err) {
-      // First, hide the notification
-      // This prevents UI bugs in case of multiple sequential clicks
-      this.#formNotification.hide();
-
       // show pop up with status information
       this.#formNotification.show(
         'Something went wrong. Please try again.',
