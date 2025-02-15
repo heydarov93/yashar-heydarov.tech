@@ -3,6 +3,7 @@ class Notification {
   popUpContentEl;
   underLineEl;
   messageEl;
+  closeEl; // closes popup on click
   message; // message to display
   type; // type can be 'success' or 'error'
   isDisplayed; // true if pop up on the screen, otherwise false
@@ -15,11 +16,11 @@ class Notification {
     // Create notification wrapper with appropriate styles and classes
     this.popUpEl = document.createElement('div');
     this.popUpEl.style.display = 'none';
-    this.popUpEl.classList.add('pop-up');
+    this.popUpEl.classList.add('popup');
 
     // Create notification content wrapper with appropriate styles and classes
     this.popUpContentEl = document.createElement('div');
-    this.popUpContentEl.classList.add('pop-up-content');
+    this.popUpContentEl.classList.add('popup-content');
 
     // Create underline element and add appropriate styles based on the type of notification
     // and it will be animated
@@ -31,11 +32,23 @@ class Notification {
     this.messageEl = document.createElement('p');
     this.messageEl.classList.add('message');
 
+    // Create close button to hide popup onClick
+    this.closeEl = document.createElement('button');
+    this.closeEl.classList.add('close-popup');
+    this.closeEl.innerText = 'x';
+
     // Append elements to the DOM
     document.body.appendChild(this.popUpEl);
     this.popUpEl.appendChild(this.popUpContentEl);
     this.popUpContentEl.appendChild(this.messageEl);
     this.popUpContentEl.appendChild(this.underLineEl);
+    this.popUpContentEl.appendChild(this.closeEl);
+
+    // add event listeners
+    this.closeEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.hide();
+    });
   }
 
   // Show notification message
@@ -59,7 +72,7 @@ class Notification {
       this.timeOut = setTimeout(() => {
         this.popUpEl.style.display = 'none';
         this.isDisplayed = false;
-      }, 3000);
+      }, 10000);
     }, 0);
   }
 
