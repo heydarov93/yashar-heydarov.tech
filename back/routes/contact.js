@@ -7,10 +7,11 @@ import { rateLimitByIp } from '../helpers/rate-limiters.js';
 
 const limitEmailSending = (req, res, next) => {
   try {
-    rateLimitByIp(req, 2, 60000);
+    // Allow at most 3 requests every 15 minutes
+    rateLimitByIp(req, 3, 900000);
     next();
   } catch (err) {
-    res.status(429).json(err.message);
+    res.status(err.statusCode || 500).json({ message: err.message });
   }
 };
 
@@ -40,6 +41,7 @@ router.post(
       // if there is an error return 400 status code and error messages
       if (!errors.isEmpty()) {
         return res.status(400).json({
+          message: 'Validation failed.',
           errors: errors.array().map((err) => {
             // only send array of object with the input name and relative error message
             return {
