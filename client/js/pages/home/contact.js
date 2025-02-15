@@ -114,7 +114,8 @@ class Contact extends AbstractHome {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new ContactError('Validation failed', {
+        throw new ContactError(errorData.message, {
+          // If these fields are missing in the response, their values will be undefined.
           status: response.status,
           errors: errorData.errors,
         });
@@ -158,7 +159,7 @@ class Contact extends AbstractHome {
     const { name, from, message } = this.#formInputInfos;
     try {
       // validate form fields
-      if (!this.validateForm()) throw new Error();
+      if (!this.validateForm()) throw new ContactError('Validation failed.');
 
       // send email to backend
       await this.sendEmail(from.value, name.value, message.value);
@@ -170,10 +171,7 @@ class Contact extends AbstractHome {
       form.reset();
     } catch (err) {
       // show pop up with status information
-      this.#formNotification.show(
-        'Something went wrong. Please try again.',
-        'error'
-      );
+      this.#formNotification.show(err.message, 'error');
 
       // if validation fails in the server show errors
       // with the relative messages from backend
