@@ -50,6 +50,10 @@ input {
   margin: 0 auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 button:disabled {
   cursor: not-allowed;
   background-color: var(--primary-color-200, hsl(201, 69%, 84%)) !important;
@@ -68,7 +72,6 @@ button:disabled {
   font-weight: var(--font-weight-medium, 500);
   line-height: var(--spacing-lg, 2.4rem);
   border: none;
-  cursor: pointer;
 }
 
 .btn-cta {
@@ -115,7 +118,7 @@ button:disabled {
 }
 
 /* Notification popup styling */
-.pop-up {
+.popup {
   position: fixed;
   top: 0.8rem;
   left: 50%;
@@ -127,8 +130,9 @@ button:disabled {
   z-index: 1000;
   overflow: hidden;
 
-  .pop-up-content {
-    padding: var(--spacing-sm, 1.4rem) var(--spacing-md, 1.8rem);
+  .popup-content {
+    padding: var(--spacing-md, 1.8rem) var(--spacing-sm, 1.4rem);
+    padding-right: var(--spacing-lg, 2.4rem);
     position: relative;
     overflow: hidden;
 
@@ -139,6 +143,16 @@ button:disabled {
       bottom: 0;
       left: 0;
       animation: underline 0.8s ease-in-out;
+    }
+
+    .close-popup {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 0.4rem;
+      right: 0.8rem;
+      background: none;
+      border: none;
+      color: var(--quaternary-font-color, #a5acb5);
     }
   }
 
