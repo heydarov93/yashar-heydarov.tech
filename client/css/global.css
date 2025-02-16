@@ -50,6 +50,15 @@ input {
   margin: 0 auto;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--primary-color-200, hsl(201, 69%, 84%)) !important;
+}
+
 .btn,
 .btn-cta,
 .nav-item {
@@ -63,7 +72,6 @@ input {
   font-weight: var(--font-weight-medium, 500);
   line-height: var(--spacing-lg, 2.4rem);
   border: none;
-  cursor: pointer;
 }
 
 .btn-cta {
@@ -107,4 +115,60 @@ input {
   display: inline-block;
   color: var(--Gray-700, #424e60);
   transition: var(--transition-all);
+}
+
+/* Notification popup styling */
+.popup {
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white, #fff);
+  font-size: var(--spacing-md, 1.8rem);
+  box-shadow: 0rem 3.2rem 9.6rem 0rem rgba(28, 25, 25, 0.16);
+  border-radius: var(--spacing-2xs, 0.4rem);
+  z-index: 1000;
+  overflow: hidden;
+
+  .popup-content {
+    padding: var(--spacing-md, 1.8rem) var(--spacing-sm, 1.4rem);
+    padding-right: var(--spacing-lg, 2.4rem);
+    position: relative;
+    overflow: hidden;
+
+    .underline {
+      height: 0.4rem;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      animation: underline 0.8s ease-in-out;
+    }
+
+    .close-popup {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 0.4rem;
+      right: 0.8rem;
+      background: none;
+      border: none;
+      color: var(--quaternary-font-color, #a5acb5);
+    }
+  }
+
+  &.success {
+    color: var(--success-color, #4caf50);
+
+    .underline {
+      background-color: var(--success-color, #4caf50);
+    }
+  }
+
+  &.error {
+    color: var(--error-color, #f44336);
+
+    .underline {
+      background-color: var(--error-color, #f44336);
+    }
+  }
 }

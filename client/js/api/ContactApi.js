@@ -6,8 +6,23 @@ class ContactApi extends ApiService {
     super(API_Config.BASE_URL);
   }
 
-  getAll() {
-    return this.request('/contact');
+  async getAll() {
+    try {
+      const response = await this.request('/contact');
+      return response;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async sendEmail(from, name, message) {
+    const response = await this.request('/contact/send-email', 'POST', {
+      from,
+      name,
+      message,
+    });
+
+    return response;
   }
 }
 

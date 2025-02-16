@@ -31,6 +31,9 @@
   --Gray-800: #2b384c;
   --Gray-900: #132238;
 
+  --success-color: #4caf50;
+  --error-color: #f44336;
+
   /* Typography */
   --font-main: 'Work Sans', sans-serif;
   --font-secondary: 'Poppins', sans-serif;
@@ -40,6 +43,7 @@
   --secondary-font-color: var(--Gray-600);
   --tertiary-font-color: var(--Gray-400);
   --quaternary-font-color: var(--Gray-300);
+  --form-error-msg-color: #ff0033;
 
   /* Font Weight */
   --font-weight-light: 300;
