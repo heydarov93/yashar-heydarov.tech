@@ -1,13 +1,35 @@
 import Layout from './layout/Layout.js';
 import HomePage from './pages/home/index.js';
+import Auth from './pages/auth/index.js';
 
-const route = window.location.pathname;
+const path = window.location.pathname;
 
-// Initialize common layout (e.g. Header, Footer)
-const layout = new Layout();
-layout.init(route);
+function displayHomePage() {
+  // Initialize and display common layout (e.g. Header, Footer)
+  const layout = new Layout();
+  layout.init(path);
 
-if (route === '/' || route.startsWith('/#')) {
+  // Initialize and display Home page
   const homePage = new HomePage();
   homePage.init();
+  console.log('home page initialized');
 }
+
+function displayAuthPage() {
+  // Initialize Authentication page (login or register)
+  const auth = new Auth();
+  auth.init(path);
+  console.log('auth page initialized');
+}
+
+const routes = {
+  '/': displayHomePage,
+  '/login.html': displayAuthPage,
+  '/register.html': displayAuthPage,
+};
+
+// Get the display function of the reuqested url
+const render = routes[path];
+
+// Render requested page
+render();
