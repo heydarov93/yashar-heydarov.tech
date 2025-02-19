@@ -206,5 +206,4 @@ class Experience extends AbstractHome {
   }
 }
 
-const experienceSection = new Experience();
-export default experienceSection;
+export default Experience;

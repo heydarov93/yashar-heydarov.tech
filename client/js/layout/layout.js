@@ -38,5 +38,4 @@ class Layout {
   }
 }
 
-const layout = new Layout();
-export default layout;
+export default Layout;

@@ -39,5 +39,4 @@ class HomeBase {
   }
 }
 
-const homeBase = new HomeBase();
-export default homeBase;
+export default HomeBase;

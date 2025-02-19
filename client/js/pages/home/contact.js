@@ -239,5 +239,4 @@ class Contact extends AbstractHome {
   }
 }
 
-const contactSection = new Contact();
-export default contactSection;
+export default Contact;

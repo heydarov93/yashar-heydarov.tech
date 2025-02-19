@@ -214,5 +214,4 @@ class Education extends AbstractHome {
   }
 }
 
-const educationSection = new Education();
-export default educationSection;
+export default Education;

@@ -106,5 +106,4 @@ class Portfolio extends AbstractHome {
   }
 }
 
-const portfolioSection = new Portfolio();
-export default portfolioSection;
+export default Portfolio;

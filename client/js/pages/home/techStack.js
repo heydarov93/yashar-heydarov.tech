@@ -89,6 +89,4 @@ class TechStack extends AbstractHome {
   }
 }
 
-const techStackSection = new TechStack();
-
-export default techStackSection;
+export default TechStack;
