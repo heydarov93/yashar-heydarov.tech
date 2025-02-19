@@ -104,6 +104,4 @@ class About extends AbstractHome {
   }
 }
 
-const aboutSection = new About();
-
-export default aboutSection;
+export default About;

@@ -109,5 +109,4 @@ class Hero extends AbstractHome {
   }
 }
 
-const heroSection = new Hero();
-export default heroSection;
+export default Hero;
