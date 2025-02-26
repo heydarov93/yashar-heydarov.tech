@@ -1,0 +1,217 @@
+.auth {
+  --section-height: 66rem;
+  --section-padding: 8.8rem 0 0;
+
+  --container-radius: var(--spacing-md-sm, 1.6rem);
+  --content-display: flex;
+  --content-justify: space-between;
+
+  --auth-left-flex: 0 1 65rem;
+  --auth-left-display: flex;
+  --auth-left-flex-dir: column;
+  --auth-left-gap: var(--spacing-xl, 3.2rem);
+
+  --auth-right-flex: 0 1 56rem;
+  --auth-right-padding: 4.8rem 4.8rem 2.4rem 2.4rem;
+
+  /* auth header */
+  --auth-title-font-size: 3.8rem;
+  --auth-title-font-weight: 600;
+  --auth-title-line-height: 5rem;
+  --auth-title-margin: 0 0 var(--spacing-md-sm, 1.6rem);
+
+  /* social iconS */
+  --socials-display: flex;
+  --socials-flex-dir: column;
+  --socials-gap: var(--spacing-sm, 1.4rem);
+
+  /* social link */
+  --social-link-padding: var(--spacing-lg, 2.4rem);
+  --social-link-display: flex;
+  --social-link-gap: var(--spacing-sm, 1.4rem);
+  --social-link-radius: 1rem;
+
+  /* social icon */
+  --icon-wrapper-padding: 1.2rem;
+  --icon-wrapper-display: flex;
+  --icon-wrapper-align-items: center;
+  --icon-wrapper-justify-content: center;
+  --icon-wrapper-radius: var(--spacing-2xs, 0.4rem);
+  --icon-font-size: var(--spacing-lg, 2.4rem);
+  --icon-line-height: var(--spacing-lg, 2.4rem);
+  --social-logo-height: var(--spacing-lg, 2.4rem);
+  --social-logo-width: var(--spacing-lg, 2.4rem);
+
+  /* social info */
+  --social-info-display: flex;
+  --social-info-flex-dir: column;
+  --social-info-gap: var(--spacing-2xs, 0.4rem);
+  --social-label-font-size: var(--spacing-sm, 1.4rem);
+  --social-label-line-height: var(--spacing-lg-md, 2rem);
+  --social-username-font-size: var(--spacing-md-sm, 1.6rem);
+  --social-username-font-weight: var(--font-weight-medium, 500);
+  --social-username-line-height: var(--spacing-lg, 2.4rem);
+
+  /* form */
+  --subtitle-margin: 0 0 var(--spacing-3xl, 4.8rem);
+  --form-control-margin: 0 0 var(--spacing-lg, 2.4rem);
+  --form-control-line-height: var(--spacing-sm, 1.4rem);
+
+  --form-label-line-height: var(--spacing-lg, 2.4rem);
+  --form-label-display: flex;
+  --form-label-align-items: center;
+
+  --form-input-width: 100%;
+  --form-input-font-family: var(--font-main, 'Work Sans', sans-serif);
+  --form-input-font-size: var(--spacing-md, 1.8rem);
+  --form-input-border-bottom: 0.15rem solid var(--Gray-100, #e6e8eb);
+  --form-input-height: var(--spacing-sm, 1.4rem);
+  --form-input-padding: 0 1.2rem 0;
+
+  --form-btn-margin: var(--spacing-3xl, 4.8rem) 0 0;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .container {
+    background-color: var(--white, #fff);
+    border-radius: var(--container-radius);
+    box-shadow: 0rem 5.9rem 12.4rem 0rem rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+
+    .auth-content {
+      display: var(--content-display);
+      justify-content: var(--content-justify);
+      height: 80rem;
+
+      .auth-left {
+        flex: var(--auth-left-flex);
+        display: var(--auth-left-display);
+        flex-direction: var(--auth-left-flex-dir);
+        gap: var(--auth-left-gap);
+
+        .img-wrapper {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .auth-right {
+        flex: var(--auth-right-flex);
+        padding: var(--auth-right-padding);
+
+        .auth-header {
+          .auth-title {
+            font-size: var(--auth-title-font-size);
+            font-weight: var(--auth-title-font-weight);
+            line-height: var(--auth-title-line-height);
+            margin: var(--auth-title-margin);
+          }
+
+          .section-subtitle {
+            margin: var(--subtitle-margin);
+          }
+        }
+
+        .auth-form {
+          .form-control {
+            margin: var(--form-control-margin);
+            line-height: var(--form-control-line-height);
+
+            .form-label {
+              display: var(--form-label-display);
+              align-items: var(--form-label-align-items);
+              line-height: var(--form-label-line-height);
+            }
+
+            .form-input {
+              font-family: var(--form-input-font-family);
+              width: var(--form-input-width);
+              font-size: var(--form-input-font-size);
+              border-bottom: var(--form-input-border-bottom);
+              height: var(--form-input-height);
+              line-height: var(--spacing-lg-md, 2rem);
+              padding: var(--form-input-padding);
+              transition: var(--transition-all);
+
+              &::placeholder {
+                opacity: 0;
+                color: var(--Gray-300, #c5ccd6);
+              }
+
+              &:focus::placeholder {
+                opacity: 1;
+              }
+
+              &:focus,
+              &:not(:placeholder-shown) {
+                --form-input-height: var(--spacing-4xl, 5.6rem);
+                --form-input-padding: 1.2rem;
+              }
+            }
+
+            &:focus-within .form-label {
+              color: var(--primary-color-500, #39a2db);
+            }
+
+            &:focus-within .form-input {
+              --form-input-border-bottom: 0.2rem solid
+                var(--primary-color-500, #39a2db);
+              /* resize: vertical; */
+            }
+          }
+
+          .form-error-msg {
+            color: var(--form-error-msg-color, #ff0033);
+            font-size: var(--spacing-sm, 1.4rem);
+            line-height: 150%;
+          }
+
+          .form-btn {
+            margin: var(--form-btn-margin);
+            width: 100%;
+          }
+        }
+
+        .auth-separator {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: var(--spacing-3xl, 4.8rem) 0;
+
+          .separator-line {
+            width: 45%;
+            height: 0.1rem;
+            background-color: var(--Gray-100, #d2d6dc);
+          }
+
+          .separator-text {
+            color: var(--Gray-400, #d2d6dc);
+          }
+        }
+
+        .auth-social {
+          display: var(--socials-display);
+          flex-direction: var(--socials-flex-dir);
+          gap: var(--socials-gap);
+          margin-bottom: var(--spacing-3xl, 4.8rem);
+
+          .social-btn {
+            width: 100%;
+            background-color: var(--white, #fff);
+            color: var(--secondary-font-color, #5a6374);
+            border: 0.15rem solid var(--Gray-200, #f0f2f5);
+
+            .social-logo {
+              width: var(--social-logo-width);
+              height: var(--social-logo-height);
+            }
+          }
+        }
+      }
+    }
+  }
+}
