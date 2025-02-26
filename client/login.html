@@ -16,49 +16,31 @@
   </head>
   <body>
     <main>
-      <!-- Contact start -->
-      <section id="contactSection" class="contact">
+      <!-- Auth start -->
+      <section id="authSection" class="auth">
         <div class="container">
-          <div class="contact-content">
-            <div class="contact-left">
-              <header class="contact-header">
-                <h2 class="section-title contact-title">
-                  Let’s discuss your Project
-                </h2>
-                <p class="section-subtitle contact-subtitle">
-                  There are many variations of passages of Lorem Ipsu available.
-                  but the majority have suffered alte.
+          <div class="auth-content">
+            <div class="auth-left">
+              <div class="img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="auth-right">
+              <header class="auth-header">
+                <h2 class="section-title auth-title">Sign up</h2>
+                <p class="section-subtitle auth-subtitle">
+                  <!-- description optional -->
                 </p>
               </header>
-              <ul class="socials">
-                <!-- Dynamic data -->
-                <!-- <li>
-                  <a
-                    class="social-link"
-                    href="https://www.linkedin.com/in/yashar-heydarov/"
-                    target="_blank"
-                  >
-                    <span class="icon-wrapper">
-                      <i class="fa-brands fa-linkedin icon"></i>
-                    </span>
-                    <p class="social-info">
-                      <span class="social-label">Linkedin:</span>
-                      <span class="social-username">/in/yashar-heydarov</span>
-                    </p>
-                  </a>
-                </li> -->
-              </ul>
-            </div>
-            <div class="contact-right">
-              <p class="section-subtitle form-description">
-                There are many variations of passages of Lorem Ipsu available.
-                but the majority have suffered alte.
-              </p>
               <form
-                id="contactForm"
+                id="authForm"
                 action=""
                 method="post"
-                class="contact-form"
+                class="auth-form"
+                autocomplete="off"
               >
                 <div class="form-control">
                   <label class="form-label" for="formName"
@@ -70,6 +52,7 @@
                     name="name"
                     type="text"
                     placeholder="Enter your name"
+                    autocomplete="off"
                   />
                   <p id="nameErrorText" class="form-error-msg"></p>
                 </div>
@@ -83,33 +66,78 @@
                     name="email"
                     type="text"
                     placeholder="Enter your email"
+                    autocomplete="username"
                   />
                   <p id="emailErrorText" class="form-error-msg"></p>
                 </div>
                 <div class="form-control">
-                  <label class="form-label" for="formMessage"
-                    >Message<sup>*</sup></label
+                  <label class="form-label" for="formPassword"
+                    >Password<sup>*</sup></label
                   >
-                  <textarea
+                  <input
                     class="form-input"
-                    name="message"
-                    id="formMessage"
-                    cols=""
-                    rows=""
-                    placeholder="Enter your message"
-                  ></textarea>
-                  <p id="messageErrorText" class="form-error-msg"></p>
+                    id="formPassword"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="new-password"
+                  />
+                  <p id="passwordErrorText" class="form-error-msg"></p>
+                </div>
+                <div class="form-control">
+                  <label class="form-label" for="formConfirmPassword"
+                    >Confirm password<sup>*</sup></label
+                  >
+                  <input
+                    class="form-input"
+                    id="formConfirmPassword"
+                    name="confirm-password"
+                    type="password"
+                    placeholder="Confirm your password"
+                    autocomplete="new-password"
+                  />
+                  <p id="confirmErrorText" class="form-error-msg"></p>
                 </div>
                 <button class="btn btn-cta form-btn" type="submit">
-                  Send Message
-                  <i class="fa-solid fa-paper-plane"></i>
+                  Sign up
                 </button>
+                <!-- Separator -->
+                <div class="auth-separator">
+                  <span class="separator-line"></span>
+                  <span class="separator-text">or</span>
+                  <span class="separator-line"></span>
+                </div>
+
+                <!-- Authentication via social media account -->
+                <div class="auth-social">
+                  <button class="btn btn-cta social-btn auth-google-btn">
+                    <img
+                      class="social-logo"
+                      src="./assets/svg/google.svg"
+                      alt="Google logo"
+                    />
+                    Sign up with Google
+                  </button>
+                  <button class="btn btn-cta social-btn auth-github-btn">
+                    <img
+                      class="social-logo"
+                      src="./assets/svg/tech-stack-logos/github.svg"
+                      alt="Github logo"
+                    />
+                    Sign up with Github
+                  </button>
+                </div>
+
+                <p class="auth-note">
+                  Already have an account?
+                  <a href="./login.html" class="auth-link">Sign in</a>
+                </p>
               </form>
             </div>
           </div>
         </div>
       </section>
-      <!-- Contact end -->
+      <!-- Auth end -->
     </main>
 
     <script type="module" src="./js/main.js"></script>
