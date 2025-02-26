@@ -12,14 +12,12 @@ function displayHomePage() {
   // Initialize and display Home page
   const homePage = new HomePage();
   homePage.init();
-  console.log('home page initialized');
 }
 
 function displayAuthPage() {
   // Initialize Authentication page (login or register)
   const auth = new Auth();
   auth.init(path);
-  console.log('auth page initialized');
 }
 
 const routes = {
