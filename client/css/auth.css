@@ -1,12 +1,17 @@
 .auth {
-  --section-height: 66rem;
+  --section-height: 100%;
   --section-padding: 8.8rem 0 0;
 
-  --container-radius: var(--spacing-md-sm, 1.6rem);
-  --content-display: flex;
-  --content-justify: space-between;
+  --container-max-width: 100%;
+  --container-height: 100%;
+  --container-margin: 0;
+  --container-overflow: hidden;
 
-  --auth-left-flex: 0 1 65rem;
+  --content-display: flex;
+  --content-justify: flex-start;
+  --content-gap: var(--spacing-4xl, 5.6rem);
+
+  --auth-left-flex: 0 1 50%;
   --auth-left-display: flex;
   --auth-left-flex-dir: column;
   --auth-left-gap: var(--spacing-xl, 3.2rem);
@@ -70,32 +75,29 @@
 
   --form-btn-margin: var(--spacing-3xl, 4.8rem) 0 0;
 
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
   .container {
     background-color: var(--white, #fff);
-    border-radius: var(--container-radius);
     box-shadow: 0rem 5.9rem 12.4rem 0rem rgba(0, 0, 0, 0.12);
-    overflow: hidden;
+    height: var(--container-height);
+    max-width: var(--container-max-width);
+    margin: var(--container-margin);
+    overflow: var(--container-overflow);
 
     .auth-content {
       display: var(--content-display);
       justify-content: var(--content-justify);
-      height: 80rem;
+      gap: var(--content-gap);
 
       .auth-left {
         flex: var(--auth-left-flex);
-        display: var(--auth-left-display);
-        flex-direction: var(--auth-left-flex-dir);
-        gap: var(--auth-left-gap);
 
         .img-wrapper {
           width: 100%;
           height: 100%;
+
+          img {
+            display: block;
+          }
         }
       }
 
